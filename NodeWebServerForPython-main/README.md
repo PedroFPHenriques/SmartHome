@@ -1,7 +1,8 @@
-# NodeWebServerForPython
-Raspberry Pi using NodeJS as a front end web server for a python program
+# PiGpioWebServer
+Raspberry Pi webserver to control GPIO using Node JS
 
-YouTube video at  https://youtu.be/vj1Bb4kn3Ew 
+Refer to "GPIO Webserver for Raspbery Pi.pdf" for install procedure.
 
-Refer to "Node Webserver frontend demo xxx.pdf" for more information.
+You tube video at https://youtu.be/TVxQROFPjy0
 
+August 22, 2021: Added updated documentation for the Raspberry Pi Zero and troubleshotting infomation
