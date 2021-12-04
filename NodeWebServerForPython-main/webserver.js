@@ -17,7 +17,7 @@ var GPIO16value = 1;  // Turn on the LED by default
 
 /****** CONSTANTS******************************************************/
 
-const WebPort = 80;
+const WebPort = 3000;
 
 
 /* if you want to run WebPort on a port lower than 1024 without running
