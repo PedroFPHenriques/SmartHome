@@ -15,7 +15,7 @@ const WebPort = 80;
  * other programs running on the Pi.  
  */
 const UdpListenPort = 3000;
-const RemoteAddress1 = '192.168.18.34'
+const RemoteAddress1 = '192.168.0.200';
 const UdpTransmitPort1 = 3000;
 const RemoteAddress2 = '127.0.0.1'
 const UdpTransmitPort2 = 3001;
