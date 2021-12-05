@@ -5,9 +5,9 @@ var path = require('path');
 var io = require('socket.io','net')(http) //require socket.io module and pass the http object (server)
 var Gpio = require('pigpio').Gpio;
 
-redLED = new Gpio(15, {mode: Gpio.OUTPUT});
+redLED = new Gpio(22, {mode: Gpio.OUTPUT});
 greenLED = new Gpio(22, {mode: Gpio.OUTPUT});
-blueLED = new Gpio(24, {mode: Gpio.OUTPUT});
+blueLED = new Gpio(16, {mode: Gpio.OUTPUT});
 
 
 /****** CONSTANTS******************************************************/
