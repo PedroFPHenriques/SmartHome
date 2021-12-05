@@ -114,7 +114,7 @@ process.on('SIGINT', function () { //on ctrl+c
 io.sockets.on('connection', function (socket) {// WebSocket Connection
     console.log('A new client has connectioned. Send LED status');
 	console.log('red_value: '+req.query.red_value);
-	redLED.pwmWrite(req.query.red_value);
+	redLED.pwmWrite(155);
     /*socket.emit('GPIO26', GPIO26value);
     socket.emit('GPIO20', GPIO20value);
     socket.emit('GPIO21', GPIO21value);
