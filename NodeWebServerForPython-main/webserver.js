@@ -113,7 +113,6 @@ process.on('SIGINT', function () { //on ctrl+c
 
 io.sockets.on('connection', function (socket) {// WebSocket Connection
     console.log('A new client has connectioned. Send LED status');
-	console.log('red_value: '+req.query.red_value);
 	redLED.pwmWrite(155);
 	blueLED.pwmWrite(155);
 	greenLED.pwmWrite(155);
