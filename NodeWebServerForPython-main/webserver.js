@@ -7,7 +7,7 @@ var Gpio = require('pigpio').Gpio;
 
 redLED = new Gpio(22, {mode: Gpio.OUTPUT});
 greenLED = new Gpio(23, {mode: Gpio.OUTPUT});
-blueLED = new Gpio(14, {mode: Gpio.OUTPUT});
+blueLED = new Gpio(24, {mode: Gpio.OUTPUT});
 
 
 /****** CONSTANTS******************************************************/
@@ -125,8 +125,8 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 		/*data = data.replace(/[^\d,]/g, '').split(',');
 		console.log(data)*/
 		redLED.pwmWrite(data[0]);
-		greenLED.pwmWrite(data[1]);
-		blueLED.pwmWrite(data[2]);
+		/*greenLED.pwmWrite(data[1]);
+		blueLED.pwmWrite(data[2]);*/
 	});
 
 	/*// this gets called whenever client presses GPIO26 toggle light button
