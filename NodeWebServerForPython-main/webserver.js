@@ -6,8 +6,8 @@ var io = require('socket.io','net')(http) //require socket.io module and pass th
 var Gpio = require('pigpio').Gpio;
 
 greenLED = new Gpio(22, {mode: Gpio.OUTPUT});
-redLED = new Gpio(23, {mode: Gpio.OUTPUT});
-blueLED = new Gpio(24, {mode: Gpio.OUTPUT});
+blueLED = new Gpio(23, {mode: Gpio.OUTPUT});
+redLED = new Gpio(24, {mode: Gpio.OUTPUT});
 
 
 /****** CONSTANTS******************************************************/
@@ -124,8 +124,8 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 		console.log(data[2])
 		/*data = data.replace(/[^\d,]/g, '').split(',');
 		console.log(data)*/
-		/*redLED.pwmWrite(data[0]);
-		greenLED.pwmWrite(data[1]);*/
+		redLED.pwmWrite(data[0]);
+		greenLED.pwmWrite(data[1]);
 		blueLED.pwmWrite(data[2]);
 	});
 
