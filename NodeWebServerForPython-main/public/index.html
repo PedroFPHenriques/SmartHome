@@ -1,77 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Steve's Projects">
-    <title>Pi GPIO</title>
-    <link rel="icon" type="image/png" href="../images/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
-   </head>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Owl Carousel 2 Equal Heights (css only)</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../public/images/favicon.ico" />
+  <link rel='stylesheet' href='css/bootstrap.min.css'>
+  <link rel='stylesheet' href='css/botao.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.carousel.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.theme.default.min.css'>
+  <link rel='stylesheet' href='https://rawgit.com/bryanwillis/a3d4935336174c9d9deb58dff040207d/raw/d06b38aa36e868bc70d022293f4c3bd8600b50a3/flexbox-bs3.css'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-<body oncopy="return false" oncut="return false" onpaste="return false">
-  
-  <div class="noselect">
-  
-  <div class="keypadContainer">
-    <h1 class="TextCenter">Control GPIO</h1>
-    
-    <div class="GpioContainer">
-      <strong>GPIO26</strong>
-      <br>
-      <label class="switch">
-        <input type="checkbox" id="GPIO26" disabled >
-        <span class="slider round"></span>
-      </label>	
-      <br>
-      <button id="GPIO26M"></button>
-      <br>
-    </div>
-    
-    <div class="GpioContainer">
-      <strong>GPIO20</strong>
-      <br>
-      <label class="switch">
-        <input type="checkbox" id="GPIO20" disabled>
-        <span class="slider round"></span>
-      </label>	
-      <br>
-      <button id="GPIO20M"></button>
-      <br>
-    </div>
-    
-    <div class="GpioContainer">
-      <strong>GPIO21</strong>
-      <br>
-      <label class="switch">
-        <input type="checkbox" id="GPIO21" disabled>
-        <span class="slider round"></span>
-      </label>	
-      <br>
-      <button id="GPIO21M"></button>
-      <br>
-    </div>
-    
-    <div class="GpioContainer">
-      <strong>GPIO16</strong>
-      <br>
-      <label class="switch">
-      <input type="checkbox" id="GPIO16" disabled>
-      <span class="slider round"></span>
-      </label>	
-      <br>
-      <button id="GPIO16M"></button>
-      <br>
-    </div>
-    
-    </div>
-    
-  </div>
-    
-  <!-- include socket.io client side script -->
+<body style="font-family: 'Courier New', monospace;">
+	<div class="container" style="padding: 0px; margin: 0px; width: 100%">
+		<div class="row" style="max-width: 100%; margin: 0;">
+			<div class="col-sm-1">
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link active" href="#">Active</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#">Disabled</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-11" style="padding: 0;">
+				<div class="latest-blog-posts bg-white pt60 pb60">
+					<div class="container-fluid" style="padding: 0px; margin: 0px; min-width: 100%">
+						<div id="owl-demo-2" class="owl-carousel owl-theme" style="padding: 0px; margin: 0px; min-width: 100%; max-width: 100%; min-height: 100vh;">
+							<article id="owl-item" class="thumbnail item d-flex justify-content-center rounded-lg" style="padding: 0px; margin: 0px; min-height: 100vh;" itemscope="" itemtype="http://schema.org/CreativeWork">
+								<div id="owl-padding">
+									<div class="d-flex justify-content-center" style="min-width: 100%;">
+										<h1 style="text-align: center;">Luzes TV</h1>
+									</div>
+									<div class="col-sm-4" style="min-width: 100%; padding: 0;">
+										<div class="d-flex justify-content-center" style="padding: 0px; margin: 0px; min-width: 100%; width: 100%;">
+											<div id="picker" class="disable-owl-swipe d-flex" style="padding-top:0px;padding-bottom:0px;"></div>
+										</div>
+									</div>
+									<div class="row" style="max-width: 100%; margin: 0;">
+										<div class="col-sm-6" style="align-items: center; justify-content: center;">
+											<h3 style="width: 100%; align-items: center;">On/Off</h3>
+											<label style="" class="switch">
+												<input type="checkbox">
+												<span class="slider round"></span>
+											</label>
+										</div>
+										<div class="col-sm-6" >
+
+										</div>
+									</div>
+								</div>
+							</article>
+							<article class="thumbnail item" style="padding: 0px; margin: 0px; min-height: 100vh" itemscope="" itemtype="http://schema.org/CreativeWork">
+								<a class="blog-thumb-img" href="/5-ways-baby-boomers-changing-healthcare/" title="">
+									<img src="http://placehold.it/500x300/4DC7A0/ffffff" class="img-responsive" />
+								</a>
+								<div class="caption">
+									<h4 itemprop="headline">
+										<a href="#" rel="bookmark">5 Ways Baby Boomers Are Changing Healthcare</a>
+									</h4>
+									<p itemprop="text" class="flex-text text-muted">5 ways baby boomers are changing healthcare Starting in 2011, 3 million baby boomers each year reach retirement age....</p>
+									<p>							<a href="#" class="btn btn-primary btn-block">Button Text</a></p>
+								</div>
+							</article>
+							<article class="thumbnail item" style="padding: 0px; margin: 0px; min-height: 100vh" itemscope="" itemtype="http://schema.org/CreativeWork">
+								<a class="blog-thumb-img" href="/5-ways-baby-boomers-changing-healthcare/" title="">
+									<img src="http://placehold.it/500x300/4DC7A0/ffffff" class="img-responsive" />
+								</a>
+								<div class="caption">
+									<h4 itemprop="headline">
+										<a href="#" rel="bookmark">5 Ways Baby Boomers Are Changing Healthcare</a>
+									</h4>
+									<p itemprop="text" class="flex-text text-muted">5 ways baby boomers are changing healthcare Starting in 2011, 3 million baby boomers each year reach retirement age....</p>
+									<a href="#" class="btn btn-primary btn-block">Button Text</a>
+								</div>
+							</article>
+							<article class="thumbnail item" style="padding: 0px; margin: 0px; min-height: 100vh" itemscope="" itemtype="http://schema.org/CreativeWork">
+								<a class="blog-thumb-img" href="/5-ways-baby-boomers-changing-healthcare/" title="">
+									<img src="http://placehold.it/500x300/4DC7A0/ffffff" class="img-responsive" />
+								</a>
+								<div class="caption">
+									<h4 itemprop="headline">
+										<a href="#" rel="bookmark">5 Ways Baby Boomers Are Changing Healthcare</a>
+									</h4>
+									<p itemprop="text" class="flex-text text-muted">5 ways baby boomers are changing healthcare Starting in 2011, 3 million baby boomers each year reach retirement age....</p>
+									<a href="#" class="btn btn-primary btn-block">Button Text</a>
+								</div>
+							</article>
+							<article class="thumbnail item" style="padding: 0px; margin: 0px; min-height: 100vh" itemscope="" itemtype="http://schema.org/CreativeWork">
+								<a class="blog-thumb-img" href="/5-ways-baby-boomers-changing-healthcare/" title="">
+									<img src="http://placehold.it/500x300/4DC7A0/ffffff" class="img-responsive" />
+								</a>
+								<div class="caption">
+									<h4 itemprop="headline">
+										<a href="#" rel="bookmark">5 Ways Baby Boomers Are Changing Healthcare</a>
+									</h4>
+									<p itemprop="text" class="flex-text text-muted">5 ways baby boomers are changing healthcare Starting in 2011, 3 million baby boomers each year reach retirement age....</p>
+									<a href="#" class="btn btn-primary btn-block">Button Text</a>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+  <script type="text/javascript" src="js/iro.js"></script>
+  <script type="text/javascript" src='https://cdn.jsdelivr.net/g/jquery@2.1.4,jquery.migrate@1.4.1,bootstrap@3.3.7,jquery.matchheight@0.7.0'></script>
+  <script type="text/javascript" src='js/owl.js'></script>
+  <script type="text/javascript" src="js/script.js"></script>
   <script src="/socket.io/socket.io.js"></script>
-
   <script src="main.js"></script>
+  <script>
+    var w = window.innerWidth;
+    var width_color
+	var owl_width = $("#owl-demo-2").width()
+	if (w > 0){
+		document.getElementById("owl-item").style.paddingRight = "20px"
+		document.getElementById("owl-item").style.paddingLeft = "20px"
+		document.getElementById("owl-item").style.paddingTop = "10px"
+		document.getElementById("owl-item").style.paddingBottom = "10px"
+		document.getElementById("owl-padding").style.paddingRight = "10px"
+		document.getElementById("owl-padding").style.paddingLeft = "10px"
+		width_color = owl_width-60
+	}if (w > 480){
+		document.getElementById("owl-item").style.paddingRight = "20px"
+		document.getElementById("owl-item").style.paddingLeft = "20px"
+		document.getElementById("owl-item").style.paddingTop = "10px"
+		document.getElementById("owl-item").style.paddingBottom = "10px"
+		document.getElementById("owl-padding").style.paddingRight = "10px"
+		document.getElementById("owl-padding").style.paddingLeft = "10px"
+		width_color = owl_width/2-60
+	}if (w > 768){
+		document.getElementById("owl-item").style.paddingRight = "20px"
+		document.getElementById("owl-item").style.paddingLeft = "20px"
+		document.getElementById("owl-item").style.paddingTop = "10px"
+		document.getElementById("owl-item").style.paddingBottom = "10px"
+		document.getElementById("owl-padding").style.paddingRight = "10px"
+		document.getElementById("owl-padding").style.paddingLeft = "10px"
+		width_color = owl_width/2-60
+	}if (w > 992){
+		document.getElementById("owl-item").style.paddingRight = "30px"
+		document.getElementById("owl-item").style.paddingLeft = "30px"
+		document.getElementById("owl-item").style.paddingTop = "10px"
+		document.getElementById("owl-item").style.paddingBottom = "10px"
+		document.getElementById("owl-padding").style.paddingRight = "10px"
+		document.getElementById("owl-padding").style.paddingLeft = "10px"
+		width_color = owl_width/3-80
+	}
+	var colorPicker = new iro.ColorPicker("#picker", {
+		width: width_color,
+		color: "rgb(255, 255, 255)",
+		borderWidth: 3,
+		borderColor: "#fff",
+		layout: [
+			{
+				component: iro.ui.Wheel,
+			},
+			{
+				component: iro.ui.Slider,
+				options: {
+					sliderType: 'alpha'
+				}
+			}
+		]
+	});
+  </script>
+  <script>
+	  colorPicker.on('color:change', function(color) {
+		  var cor = colorPicker.color.rgbString
+		  cor = cor.replace(/[^\d,]/g, '').split(',');
+	  	  console.log(cor)
+		  console.log(colorPicker.color.alpha)
+		  socket.emit("rgb",cor);  // send GPIO button toggle to node.js server
+
+		  document.getElementById("owl-item").style.backgroundColor = colorPicker.color.hexString
+	  });
+  </script>
+  <script>
+	  $(".disable-owl-swipe").on("touchstart mousedown", function(e) {
+		  // Prevent carousel swipe
+		  e.stopPropagation();
+	  })
+  </script>
 
 </body>
-</html> 
+</html>
