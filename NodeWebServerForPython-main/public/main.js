@@ -87,39 +87,6 @@ function ReportTouchStart(e) {
       socket.emit("GPIO16T");  // send GPIO button toggle to node.js server
     } 
   }
-
-  if (e.target.id === "GPIO26M") {
-    socket.emit("GPIO26", 1); 
-    document.getElementById('GPIO26').checked = 1;
-  } else if (e.target.id === "GPIO20M") {
- //   console.log("GPIO20 pressed");
-    socket.emit("GPIO20", 1); 
-    document.getElementById('GPIO20').checked = 1;
-  } else if (e.target.id === "GPIO21M") {
-  //  console.log("GPIO21 pressed");
-    socket.emit("GPIO21", 1); 
-    document.getElementById('GPIO21').checked = 1;
-  } else if (e.target.id === "GPIO16M") {
-//    console.log("GPIO16 pressed");
-    socket.emit("GPIO16", 1); 
-    document.getElementById('GPIO16').checked = 1;
-  }
-}
-
-function ReportTouchEnd(e) {
-  if (e.target.id === "GPIO26M") {
-    socket.emit("GPIO26", 0); 
-    document.getElementById('GPIO26').checked = 0;
-  } else if (e.target.id === "GPIO20M") {
-    socket.emit("GPIO20", 0); 
-    document.getElementById('GPIO20').checked = 0;
-  } else if (e.target.id === "GPIO21M") {
-    socket.emit("GPIO21", 0); 
-    document.getElementById('GPIO21').checked = 0;
-  } else if (e.target.id === "GPIO16M") {
-    socket.emit("GPIO16", 0); 
-    document.getElementById('GPIO16').checked = 0;
-  }
 }
 
 function ReportMouseDown(e) {
@@ -142,47 +109,7 @@ function ReportMouseDown(e) {
       socket.emit("GPIO16T");  // send GPIO button toggle to node.js server
     } 
   }
-  
-  if (e.target.id === "GPIO26M") {
- //   console.log("GPIO26 pressed");
-    socket.emit("GPIO26", 1); 
-    document.getElementById('GPIO26').checked = 1;
-  } else if (e.target.id === "GPIO20M") {
-//    console.log("GPIO20 pressed");
-    socket.emit("GPIO20", 1); 
-    document.getElementById('GPIO20').checked = 1;
-  } else if (e.target.id === "GPIO21M") {
-//    console.log("GPIO21 pressed");
-    socket.emit("GPIO21", 1); 
-    document.getElementById('GPIO21').checked = 1;
-  } else if (e.target.id === "GPIO16M") {
-//    console.log("GPIO16 pressed");
-    socket.emit("GPIO16", 1); 
-  }
 }
-
-
-function ReportMouseUp(e) {
-  if (e.target.id === "GPIO26M") {
-    socket.emit("GPIO26", 0); 
-    document.getElementById('GPIO26').checked = 0;
-  } else if (e.target.id === "GPIO20M") {
-    socket.emit("GPIO20", 0); 
-    document.getElementById('GPIO20').checked = 0;
-  } else if (e.target.id === "GPIO21M") {
-    socket.emit("GPIO21", 0); 
-    document.getElementById('GPIO21').checked = 0;
-  } else if (e.target.id === "GPIO16M") {
-    socket.emit("GPIO16", 0); 
-    document.getElementById('GPIO16').checked = 0;
-  }
-}
-
-function TouchMove(e) {
-
-}
-
-
 
 /** function to sense if device is a mobile device ***/
 // Reference: https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser

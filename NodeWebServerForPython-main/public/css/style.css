@@ -1,0 +1,39 @@
+/* Equal Heights for OwlCarousel 2 */
+.owl-carousel .owl-stage {
+  display: flex;
+}
+.owl-carousel .owl-item {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.owl-carousel .owl-stage {
+  display: flex;
+  align-items: center;
+}
+
+.owl-carousel .caption {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+}
+.owl-carousel .flex-text {
+  flex-grow: 1;
+}
+.owl-carousel .thumbnail {
+  display: flex;
+  flex-direction: column;
+  margin: 0 15px;
+}
+
+/* Demo Styles */
+.container-fluid {
+  max-width: 1230px;
+}
+
+.navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  margin-left: 0px !important;
+}

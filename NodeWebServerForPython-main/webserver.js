@@ -12,7 +12,7 @@ blueLED = new Gpio(14, {mode: Gpio.OUTPUT});
 
 /****** CONSTANTS******************************************************/
 
-const WebPort = 3000;
+const WebPort = 8080;
 
 
 /* if you want to run WebPort on a port lower than 1024 without running
@@ -113,13 +113,17 @@ process.on('SIGINT', function () { //on ctrl+c
 
 io.sockets.on('connection', function (socket) {// WebSocket Connection
     console.log('A new client has connectioned. Send LED status');
-	redLED.pwmWrite(155);
-	blueLED.pwmWrite(155);
-	greenLED.pwmWrite(155);
     /*socket.emit('GPIO26', GPIO26value);
     socket.emit('GPIO20', GPIO20value);
     socket.emit('GPIO21', GPIO21value);
     socket.emit('GPIO16', GPIO16value);*/
+
+	socket.on('rgb', function(data) {
+		data = data.replace(/[^\d,]/g, '').split(',');
+		redLED.pwmWrite(data[0]);
+		blueLED.pwmWrite(data[0]);
+		greenLED.pwmWrite(data[0]);
+	});
 
 	/*// this gets called whenever client presses GPIO26 toggle light button
     socket.on('GPIO26T', function(data) { 
