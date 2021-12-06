@@ -120,9 +120,9 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 
 	socket.on('rgb', function(data) {
 		console.log(data)
-		data = data.replace(/[^\d,]/g, '').split(',');
+		/*data = data.replace(/[^\d,]/g, '').split(',');
 		console.log(data)
-		/*redLED.pwmWrite(data[0]);
+		redLED.pwmWrite(data[0]);
 		blueLED.pwmWrite(data[0]);
 		greenLED.pwmWrite(data[0]);*/
 	});
