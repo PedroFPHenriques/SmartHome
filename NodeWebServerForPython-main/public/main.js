@@ -67,6 +67,15 @@ socket.on('GPIO16', function (data) {
 //  console.log('GPIO16: '+data.toString());
 });
 
+colorPicker.on('color:change', function(color) {
+  var cor = colorPicker.color.rgbString
+  cor = cor.replace(/[^\d,]/g, '').split(',');
+  console.log(cor)
+  console.log(colorPicker.color.alpha)
+  socket.emit("rgb",cor);  // send GPIO button toggle to node.js server
+
+  document.getElementById("owl-item").style.backgroundColor = colorPicker.color.hexString
+});
 
 function ReportTouchStart(e) {
   var y = e.target.previousElementSibling;
