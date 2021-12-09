@@ -68,12 +68,9 @@ socket.on('GPIO16', function (data) {
 });
 
 colorPicker.on('color:change', function(color) {
-  var cor = colorPicker.color.rgbString
-  cor = cor.replace(/[^\d,]/g, '').split(',');
-  console.log(cor)
-  console.log(colorPicker.color.alpha)
+  const cor = [colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(','), colorPicker.color.alpha];
   socket.emit("rgb",cor);  // send GPIO button toggle to node.js server
-
+  console.log(cor[1])
   document.getElementById("owl-item").style.backgroundColor = colorPicker.color.hexString
 });
 
