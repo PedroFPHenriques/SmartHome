@@ -108,8 +108,7 @@ function handler (req, res) {
   process.exit(); //exit completely
 }); */
 
-
-/****** io.socket is the websocket connection to the client's browser********/
+	/****** io.socket is the websocket connection to the client's browser********/
 
 io.sockets.on('connection', function (socket) {// WebSocket Connection
     console.log('A new client has connectioned. Send LED status');
@@ -120,9 +119,9 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 
 	socket.on('rgb', function(data) {
 		if (data.check == true){
-			var red = Math.round(data.rgbvalue[0]*data.alpha).toString()
-			var green = Math.round(data.rgbvalue[1]*data.alpha).toString()
-			var blue = Math.round(data.rgbvalue[2]*data.alpha).toString()
+			var red = Math.ceil(data.rgbvalue[0]*data.alpha).toString()
+			var green = Math.ceil(data.rgbvalue[1]*data.alpha).toString()
+			var blue = Math.ceil(data.rgbvalue[2]*data.alpha).toString()
 			redLED.pwmWrite(red);
 			greenLED.pwmWrite(green);
 			blueLED.pwmWrite(blue);
