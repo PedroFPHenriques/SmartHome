@@ -92,7 +92,7 @@ function handler (req, res) {
 
 
 // Execute this when web server is terminated
-process.on('SIGINT', function () { //on ctrl+c
+/*process.on('SIGINT', function () { //on ctrl+c
   LED26.writeSync(0); // Turn LED off
   LED26.unexport(); // Unexport LED GPIO to free resources
   
@@ -106,7 +106,7 @@ process.on('SIGINT', function () { //on ctrl+c
   LED16.unexport(); // Unexport LED GPIO to free resources
 
   process.exit(); //exit completely
-}); 
+}); */
 
 
 /****** io.socket is the websocket connection to the client's browser********/
