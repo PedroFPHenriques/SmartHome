@@ -120,9 +120,15 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 
 	socket.on('rgb', function(data) {
 		if (data.check == true){
-			redLED.pwmWrite(Math.round(data.rgbvalue[0]*data.alpha));
-			greenLED.pwmWrite(Math.round(data.rgbvalue[1]*data.alpha));
-			blueLED.pwmWrite(Math.round(data.rgbvalue[2]*data.alpha));
+			var red = Math.round(data.rgbvalue[0]*data.alpha)
+			var green = Math.round(data.rgbvalue[1]*data.alpha)
+			var blue = Math.round(data.rgbvalue[2]*data.alpha)
+			redLED.pwmWrite(red);
+			greenLED.pwmWrite(green);
+			blueLED.pwmWrite(blue);
+			console.log(red)
+			console.log(green)
+			console.log(blue)
 		}else{
 			console.log("false")
 
