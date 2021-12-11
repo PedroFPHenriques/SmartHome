@@ -128,6 +128,9 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 			blueLED.pwmWrite(blue);
 		}else{
 			console.log("false")
+			redLED.pwmWrite(0);
+			greenLED.pwmWrite(0);
+			blueLED.pwmWrite(0);
 
 		}
 		/*redLED.pwmWrite(data[0][0]);
