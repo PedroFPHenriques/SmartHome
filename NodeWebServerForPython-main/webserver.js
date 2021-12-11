@@ -123,20 +123,14 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 			var red = Math.round(data.rgbvalue[0]*data.alpha).toString()
 			var green = Math.round(data.rgbvalue[1]*data.alpha).toString()
 			var blue = Math.round(data.rgbvalue[2]*data.alpha).toString()
-			/*console.log("red "+red+ " green " + green + " blue " + blue)*/
 			redLED.pwmWrite(red);
 			greenLED.pwmWrite(green);
 			blueLED.pwmWrite(blue);
-		}/*else{
-			console.log("false")
+		}else{
 			redLED.pwmWrite(0);
 			greenLED.pwmWrite(0);
 			blueLED.pwmWrite(0);
-
-		}*/
-		/*redLED.pwmWrite(data[0][0]);
-		greenLED.pwmWrite(data[0][1]);
-		blueLED.pwmWrite(data[0][2]);*/
+		}
 	});
 
 	/*// this gets called whenever client presses GPIO26 toggle light button
