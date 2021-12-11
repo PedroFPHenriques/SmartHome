@@ -122,6 +122,7 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 			var red = Math.ceil(data.rgbvalue[0]*data.alpha).toString()
 			var green = Math.ceil(data.rgbvalue[1]*data.alpha).toString()
 			var blue = Math.ceil(data.rgbvalue[2]*data.alpha).toString()
+			console.log(data)
 			redLED.pwmWrite(red);
 			greenLED.pwmWrite(green);
 			blueLED.pwmWrite(blue);

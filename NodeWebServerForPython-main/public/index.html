@@ -54,6 +54,10 @@
 												<input id=check1 type="checkbox" onclick="rgbCheckTogle()">
 												<span class="slider round"></span>
 											</label>
+											<input type="text" id="red" value="">
+											<input type="text" id="green" value="">
+											<input type="text" id="blue" value="">
+											<button onclick="colortest()">Teste</button>
 										</div>
 										<div class="col-sm-6" >
 
@@ -207,6 +211,12 @@
 				const sendrgb = {check:false, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
 				socket.emit("rgb",sendrgb);
 			}
+		}
+		function colortest() {
+			colorPicker.color.rgb = { r: document.getElementById("red").value, g: document.getElementById("green").value, b: document.getElementById("blue").value };
+			rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',')
+			const sendrgb = {check:false, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
+			socket.emit("rgb",sendrgb);
 		}
 
 	</script>
