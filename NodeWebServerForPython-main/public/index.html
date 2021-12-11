@@ -51,7 +51,7 @@
 										<div class="col-sm-6" style="align-items: center; justify-content: center;">
 											<h3 style="width: 100%; align-items: center;">On/Off</h3>
 											<label style="" class="switch">
-												<input type="checkbox">
+												<input id=check1 type="checkbox" onclick="rgbCheckTogle()">
 												<span class="slider round"></span>
 											</label>
 										</div>
@@ -112,7 +112,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>1
 		</div>
 	</div>
 	
@@ -184,5 +184,31 @@
 	  })
   </script>
 
+	<script>
+		var socket = io();
+		var rgbvalue
+		var checkBox = document.getElementById("check1");
+
+		colorPicker.on('color:change', function(color) {
+			rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',')
+			document.getElementById("owl-item").style.backgroundColor = colorPicker.color.hexString
+			if (checkBox.checked == true){
+				const sendrgb = {check:true, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
+				socket.emit("rgb",sendrgb);
+			}
+		});
+		function rgbCheckTogle(){
+			if (checkBox.checked == true){
+				rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',')
+				const sendrgb = {check:true, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
+				socket.emit("rgb",sendrgb);
+			}else{
+				rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',')
+				const sendrgb = {check:false, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
+				socket.emit("rgb",sendrgb);
+			}
+		}
+
+	</script>
 </body>
 </html>

@@ -4,8 +4,8 @@
 /************PROCESS DATA TO/FROM Client****************************/
 
 	
-var socket = io(); //load socket.io-client and connect to the host that serves the page
-window.addEventListener("load", function(){ //when page loads
+//var socket = io(); //load socket.io-client and connect to the host that serves the page
+/*window.addEventListener("load", function(){ //when page loads
   if( isMobile.any() ) {
 //    alert('Mobile');  
     document.addEventListener("touchstart", ReportTouchStart, false);
@@ -17,11 +17,11 @@ window.addEventListener("load", function(){ //when page loads
     document.addEventListener("mousedown", ReportMouseDown, false);
   }
   
-});
+});*/
 
 
 
-
+/*
 //Update gpio feedback when server changes LED state
 socket.on('GPIO26', function (data) {  
 //  console.log('GPIO26 function called');
@@ -72,8 +72,8 @@ colorPicker.on('color:change', function(color) {
   socket.emit("rgb",cor);  // send GPIO button toggle to node.js server
   console.log(cor[1])
   document.getElementById("owl-item").style.backgroundColor = colorPicker.color.hexString
-});
-
+});*/
+/*
 function ReportTouchStart(e) {
   var y = e.target.previousElementSibling;
   if (y !== null) var x = y.id;
@@ -93,9 +93,9 @@ function ReportTouchStart(e) {
       socket.emit("GPIO16T");  // send GPIO button toggle to node.js server
     } 
   }
-}
+}*/
 
-function ReportMouseDown(e) {
+/*function ReportMouseDown(e) {
   
   var y = e.target.previousElementSibling;
   if (y !== null) var x = y.id;
@@ -116,11 +116,11 @@ function ReportMouseDown(e) {
     } 
   }
 }
-
+*/
 /** function to sense if device is a mobile device ***/
 // Reference: https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
 
-var isMobile = {
+/*var isMobile = {
   Android: function() {
       return navigator.userAgent.match(/Android/i);
   },
@@ -139,6 +139,6 @@ var isMobile = {
   any: function() {
       return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
   }
-};
+};*/
 
 
