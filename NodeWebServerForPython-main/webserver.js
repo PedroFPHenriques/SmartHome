@@ -121,9 +121,9 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 	socket.on('rgb', function(data) {
 		if (data.check == true){
 			console.log("true")
-			redLED.pwmWrite(data.rgbvalue[0]*data.alpha);
-			greenLED.pwmWrite(data.rgbvalue[1]*data.alpha);
-			blueLED.pwmWrite(data.rgbvalue[2]*data.alpha);
+			redLED.pwmWrite(Math.round(data.rgbvalue[0]*data.alpha));
+			greenLED.pwmWrite(Math.round(data.rgbvalue[1]*data.alpha));
+			blueLED.pwmWrite(Math.round(data.rgbvalue[2]*data.alpha));
 		}else{
 			console.log("false")
 
