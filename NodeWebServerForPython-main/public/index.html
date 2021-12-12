@@ -112,7 +112,7 @@
 						</div>
 					</div>
 				</div>
-			</div>1
+			</div>
 		</div>
 	</div>
 	
@@ -162,7 +162,18 @@
 		width: width_color,
 		color: "rgb(255, 255, 255)",
 		borderWidth: 3,
-		borderColor: "#fff"
+		borderColor: "#fff",
+		layout: [
+			{
+				component: iro.ui.Wheel,
+			},
+			{
+				component: iro.ui.Slider,
+				options: {
+					sliderType: 'alpha'
+				}
+			}
+		]
 	});
   </script>
   <script>
@@ -181,18 +192,18 @@
 			rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',');
 			document.getElementById("owl-item").style.backgroundColor = colorPicker.color.hexString;
 			if (checkBox.checked === true){
-				const sendrgb = {check:true, rgbvalue:rgbvalue};
+				const sendrgb = {check:true, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
 				socket.emit("rgb",sendrgb);
 			}
 	    });
 		function rgbCheckTogle(){
 			if (checkBox.checked === true){
 				rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',');
-                const sendrgb = {check:true, rgbvalue:rgbvalue};
+				const sendrgb = {check:true, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
 				socket.emit("rgb",sendrgb);
 			}else{
 				rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',');
-                const sendrgb = {check:true, rgbvalue:rgbvalue};
+				const sendrgb = {check:false, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
 				socket.emit("rgb",sendrgb);
 			}
 		}
