@@ -170,8 +170,7 @@
 		  e.stopPropagation();
 	  })
   </script>
-
-	<script>
+  <script>
 		var socket = io();
 		var rgbvalue;
 		var checkBox = document.getElementById("check1");
@@ -196,6 +195,10 @@
 			}
 		}
 
+		socket.on('rgbt', function (data) {
+			document.getElementById('check1').checked = data.check;
+			console.log(data);
+		});
 	</script>
 </body>
 </html>

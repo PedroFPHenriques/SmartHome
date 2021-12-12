@@ -118,6 +118,7 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 	});
 
 	socket.on('rgb', function(data) {
+		io.emit('rgbt', data);
 		if (data.check === true){
 			var red = data.rgbvalue[0]
 			var green = data.rgbvalue[1]
