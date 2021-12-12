@@ -2,16 +2,16 @@ var http = require('http').createServer(handler); //require http server, and cre
 var fs = require('fs'); //require filesystem module
 var url = require('url');
 var path = require('path');
-var Gpio = require('pigpio').Gpio;
+//var Gpio = require('pigpio').Gpio;
 
 
 /* CONSTANTES */
 
 const WebPort = 8080;
 
-greenLED = new Gpio(22, {mode: Gpio.OUTPUT});
+/*greenLED = new Gpio(22, {mode: Gpio.OUTPUT});
 blueLED = new Gpio(23, {mode: Gpio.OUTPUT});
-redLED = new Gpio(24, {mode: Gpio.OUTPUT});
+redLED = new Gpio(24, {mode: Gpio.OUTPUT});*/
 
  
 /*************** Web Browser Communication ****************************/
@@ -118,31 +118,27 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 	});
 
 	socket.on('rgb', function(data) {
-		io.emit('rgbt', data);
-		if (data.check === true){
+		socket.broadcast.emit('rgbt', data);
+
+		if (data.check === true) {
 			var red = data.rgbvalue[0]
 			var green = data.rgbvalue[1]
 			var blue = data.rgbvalue[2]
 
 			//Aplicar alpha
-			red = Math.ceil(data.rgbvalue[0]*data.alpha).toString()
-			green = Math.ceil(data.rgbvalue[1]*data.alpha).toString()
-			blue = Math.ceil(data.rgbvalue[2]*data.alpha).toString()
-
-			redLED.pwmWrite(red);
+			red = Math.ceil(data.rgbvalue[0] * data.alpha).toString()
+			green = Math.ceil(data.rgbvalue[1] * data.alpha).toString()
+			blue = Math.ceil(data.rgbvalue[2] * data.alpha).toString()
+		}
+			/*redLED.pwmWrite(red);
 			greenLED.pwmWrite(green);
 			blueLED.pwmWrite(blue);
 		}else{
 			redLED.pwmWrite(0);
 			greenLED.pwmWrite(0);
 			blueLED.pwmWrite(0);
-		}
+		}*/
 	});
-
-    //Whenever someone disconnects this piece of code executed
-    socket.on('disconnect', function () {
-	console.log('A user disconnected');
-    });
 });
 
 
