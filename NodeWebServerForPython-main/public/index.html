@@ -54,10 +54,6 @@
 												<input id=check1 type="checkbox" onclick="rgbCheckTogle()">
 												<span class="slider round"></span>
 											</label>
-											<input type="text" id="red" value="">
-											<input type="text" id="green" value="">
-											<input type="text" id="blue" value="">
-											<button onclick="colortest()">Teste</button>
 										</div>
 										<div class="col-sm-6" >
 
@@ -125,7 +121,6 @@
   <script type="text/javascript" src='js/owl.js'></script>
   <script type="text/javascript" src="js/script.js"></script>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="main.js"></script>
   <script>
     var w = window.innerWidth;
     var width_color
@@ -167,18 +162,7 @@
 		width: width_color,
 		color: "rgb(255, 255, 255)",
 		borderWidth: 3,
-		borderColor: "#fff",
-		layout: [
-			{
-				component: iro.ui.Wheel,
-			},
-			{
-				component: iro.ui.Slider,
-				options: {
-					sliderType: 'alpha'
-				}
-			}
-		]
+		borderColor: "#fff"
 	});
   </script>
   <script>
@@ -190,33 +174,27 @@
 
 	<script>
 		var socket = io();
-		var rgbvalue
+		var rgbvalue;
 		var checkBox = document.getElementById("check1");
 
 		colorPicker.on('color:change', function(color) {
-			rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',')
-			document.getElementById("owl-item").style.backgroundColor = colorPicker.color.hexString
-			if (checkBox.checked == true){
-				const sendrgb = {check:true, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
+			rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',');
+			document.getElementById("owl-item").style.backgroundColor = colorPicker.color.hexString;
+			if (checkBox.checked === true){
+				const sendrgb = {check:true, rgbvalue:rgbvalue};
 				socket.emit("rgb",sendrgb);
 			}
-		});
+	    });
 		function rgbCheckTogle(){
-			if (checkBox.checked == true){
-				rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',')
-				const sendrgb = {check:true, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
+			if (checkBox.checked === true){
+				rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',');
+                const sendrgb = {check:true, rgbvalue:rgbvalue};
 				socket.emit("rgb",sendrgb);
 			}else{
-				rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',')
-				const sendrgb = {check:false, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
+				rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',');
+                const sendrgb = {check:true, rgbvalue:rgbvalue};
 				socket.emit("rgb",sendrgb);
 			}
-		}
-		function colortest() {
-			colorPicker.color.rgb = { r: document.getElementById("red").value, g: document.getElementById("green").value, b: document.getElementById("blue").value };
-			rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',')
-			const sendrgb = {check:false, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
-			socket.emit("rgb",sendrgb);
 		}
 
 	</script>
