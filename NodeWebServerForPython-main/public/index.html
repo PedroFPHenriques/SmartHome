@@ -163,6 +163,7 @@
 			}
 		]
 	});
+
   </script>
   <script>
 	  $(".disable-owl-swipe").on("touchstart mousedown", function(e) {
@@ -174,6 +175,8 @@
 		var socket = io();
 		var rgbvalue;
 		var checkBox = document.getElementById("check1");
+
+
 
 		colorPicker.on('color:change', function(color) {
 			rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',');
@@ -196,6 +199,11 @@
 		}
 
 		socket.on('rgbt', function (data) {
+			colorPicker.color.rgb = {
+				r: data.rgbvalue[0],
+				g: data.rgbvalue[1],
+				b: data.rgbvalue[2]
+			};
 			document.getElementById('check1').checked = data.check;
 			console.log(data);
 		});
