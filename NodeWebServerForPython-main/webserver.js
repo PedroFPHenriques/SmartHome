@@ -86,7 +86,7 @@ function handler (req, res) {
 var clients =[];
 
 io.sockets.on('connection', function (socket) {// WebSocket Connection
-	console.log('A new client has connectioned.');
+	console.log('A new client has connected.');
 	//console.log(socket.id); // writes client ID to the console
 	//clients.push(socket.id);
 	var clientInfo = {};
@@ -128,7 +128,6 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 			green = Math.ceil(data.rgbvalue[1]*data.alpha).toString()
 			blue = Math.ceil(data.rgbvalue[2]*data.alpha).toString()
 
-			console.log("red " + red + " green " + green + "blue" + blue);
 			redLED.pwmWrite(red);
 			greenLED.pwmWrite(green);
 			blueLED.pwmWrite(blue);
