@@ -82,6 +82,7 @@ var cor_actual
 var clients =[];
 
 io.sockets.on('connection', function (socket) {// WebSocket Connection
+	console.log('-----------------------------------------------------------------');
 	console.log('A new client has connected.');
 	//console.log(socket.id); // writes client ID to the console
 	//clients.push(socket.id);
@@ -91,6 +92,7 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 	clients.push(clientInfo);
 	console.log(clientInfo);
 	console.log(clients.length + ' clients are currently connected');
+	console.log('-----------------------------------------------------------------');
 	//envia a cor actual para a socket na conexão
 	socket.broadcast.to(socket.id).emit('rgbt', cor_actual);
 
