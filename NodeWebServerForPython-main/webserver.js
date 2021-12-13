@@ -30,16 +30,12 @@ http.listen(WebPort, function() {  // This gets call when the web server is firs
 function handler (req, res) { 
     var q = url.parse(req.url, true);
     var filename = "." + q.pathname;
-    console.log('filename='+filename);
     var extname = path.extname(filename);
-    if (filename=='./') {
-      console.log('retrieving default index.html file');
+    if (filename==='./') {
       filename= './index.html';
     }
-    
     // Initial content type
     var contentType = 'text/html';
-    
     // Check ext and set content type
     switch(extname) {
 	case '.js':
