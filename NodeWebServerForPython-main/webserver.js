@@ -125,6 +125,7 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 
 			//variavel guardada para definir o valor rgb na conexao à socket
 			cor_actual = data
+			console.log(cor_actual)
 
 			//Muda os valores dos GPIO
 			redLED.pwmWrite(red);
