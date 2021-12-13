@@ -82,7 +82,7 @@ function handler (req, res) {
 
 
 	/****** io.socket is the websocket connection to the client's browser********/
-
+var cor_actual
 var clients =[];
 
 io.sockets.on('connection', function (socket) {// WebSocket Connection
@@ -95,11 +95,8 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 	clients.push(clientInfo);
 	console.log(clientInfo);
 	console.log(clients.length + ' clients are currently connected');
-
-	// this gets called whenever client presses a button that needs to be sent to WebServer
-	socket.on('msg', function(data) {
-		//io.emit('FB', data); // Push new data to all web clients
-	});
+	//envia a cor actual para a socket na conexão
+	socket.broadcast.to(socket.id).emit('rgbt', cor_actual);
 
 
 	//Whenever someone disconnects this piece of code executed
@@ -121,15 +118,15 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 		socket.broadcast.emit('rgbt', data);
 
 		if (data.check === true) {
-			var red = data.rgbvalue[0]
-			var green = data.rgbvalue[1]
-			var blue = data.rgbvalue[2]
-
 			//Aplicar alpha
-			red = Math.ceil(data.rgbvalue[0] * data.alpha).toString()
-			green = Math.ceil(data.rgbvalue[1] * data.alpha).toString()
-			blue = Math.ceil(data.rgbvalue[2] * data.alpha).toString()
+			var red = Math.ceil(data.rgbvalue[0] * data.alpha).toString()
+			var green = Math.ceil(data.rgbvalue[1] * data.alpha).toString()
+			var blue = Math.ceil(data.rgbvalue[2] * data.alpha).toString()
 
+			//variavel guardada para definir o valor rgb na conexao à socket
+			cor_actual = data
+
+			//Muda os valores dos GPIO
 			redLED.pwmWrite(red);
 			greenLED.pwmWrite(green);
 			blueLED.pwmWrite(blue);
