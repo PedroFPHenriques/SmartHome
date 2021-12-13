@@ -21,7 +21,9 @@ var io = require('socket.io','net')(http) //require socket.io module and pass th
 
 // Start http webserver
 http.listen(WebPort, function() {  // This gets call when the web server is first started.
+	console.log('-----------------------------------------------------------------');
 	console.log('Server running on Port '+WebPort);
+	console.log('-----------------------------------------------------------------');
 	} 
 );
 
@@ -82,7 +84,6 @@ var cor_actual
 var clients =[];
 
 io.sockets.on('connection', function (socket) {// WebSocket Connection
-	console.log('-----------------------------------------------------------------');
 	console.log('A new client has connected.');
 	//console.log(socket.id); // writes client ID to the console
 	//clients.push(socket.id);
@@ -107,6 +108,7 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 				clients.splice(i,1);
 				console.log("client '" + c.clientId + "' has disconnected");
 				console.log(clients.length + ' clients are currently connected');
+				console.log('-----------------------------------------------------------------');
 				break;
 			}
 		}
