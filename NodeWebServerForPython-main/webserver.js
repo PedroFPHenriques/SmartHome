@@ -19,9 +19,9 @@ var io = require('socket.io','net')(http) //require socket.io module and pass th
 
 
 // Start http webserver
-http.listen(WebPort, function() {  // This gets call when the web server is first started.
+http.listen(8080, function() {  // This gets call when the web server is first started.
 	console.log('-----------------------------------------------------------------');
-	console.log('Server running on Port '+WebPort);
+	console.log('Server running on Port '+8080);
 	console.log('-----------------------------------------------------------------');
 	} 
 );
