@@ -119,7 +119,7 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
     */
 
 	socket.on('rgb', function(data) {
-		socket.broadcast.emit('rgbt', data);
+		//socket.broadcast.emit('rgbt', data);
 
 
 		if (data.type === "flow"){
@@ -128,31 +128,36 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 				redLED.pwmWrite(255);
 				greenLED.pwmWrite(0);
 				blueLED.pwmWrite(0);
+				rgbflow()
 
-				setInterval(function () {
-					if (r > 0 && b == 0) {
-						r--;
-						g++;
-						blueLED.pwmWrite(b);
-					}
-					if (g > 0 && r == 0) {
-						g--;
-						b++;
+				function rgbflow(){
+					setInterval(function () {
+						if (r > 0 && b == 0) {
+							r--;
+							g++;
+						}
+						if (g > 0 && r == 0) {
+							g--;
+							b++;
+						}
+						if (b > 0 && g == 0) {
+							r++;
+							b--;
+						}
+
 						redLED.pwmWrite(r);
-					}
-					if (b > 0 && g == 0) {
-						r++;
-						b--;
 						greenLED.pwmWrite(g);
-					}
-					console.log("red"+r+"-green"+g+"-blue"+b)
-				}, 100);
+						blueLED.pwmWrite(b);
+						console.log("red"+r+"-green"+g+"-blue"+b)
+					}, 100);
+				}
+
 			}else{
 				redLED.pwmWrite(0);
 				greenLED.pwmWrite(0);
 				blueLED.pwmWrite(0);
 			}
-		}else{
+		}/*else{
 			if (data.check === true) {
 				//Aplicar alpha
 				var red = Math.ceil(data.rgbvalue[0] * data.alpha).toString()
@@ -172,7 +177,7 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 				greenLED.pwmWrite(0);
 				blueLED.pwmWrite(0);
 			}
-		}
+		}*/
 
 	});
 });
