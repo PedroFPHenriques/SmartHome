@@ -149,7 +149,7 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 						greenLED.pwmWrite(g);
 						blueLED.pwmWrite(b);
 						console.log("red"+r+"-green"+g+"-blue"+b)
-					}, 1);
+					}, 20);
 				}
 
 			}else{
