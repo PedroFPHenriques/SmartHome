@@ -36,42 +36,40 @@
 			<div class="col-sm-11" style="padding: 0;">
 				<div class="latest-blog-posts bg-white pt60 pb60">
 					<div class="container-fluid" style="padding: 0px; margin: 0px; min-width: 100%">
-						<div id="owl-demo-2" class="owl-carousel owl-theme" style="padding: 0px; margin: 0px; min-width: 100%; max-width: 100%; min-height: 100vh;">
-							<article id="owl-item" class="thumbnail item d-flex justify-content-center rounded-lg" style="padding: 0px; margin: 0px; min-height: 100vh;" itemscope="" itemtype="http://schema.org/CreativeWork">
-								<div id="owl-padding">
+						<div id="owl-demo-2" class="owl-carousel owl-theme" style="padding: 0px; margin: 0px; min-width: 100%; max-width: 100%; min-height: 100vh;display: flex;">
+							<article id="owl-item" class="thumbnail item d-flex justify-content-center calculated-width" style="padding: 0px; margin: 0px; min-height: 100vh;border-radius: 40px;border-width: 12px;border-color: #555555;min-width: 100%;" itemscope="" itemtype="http://schema.org/CreativeWork">
+								<div style="border-radius: 20px">
 									<div class="d-flex justify-content-center" style="min-width: 100%;">
-										<h1 style="text-align: center;">Luzes TV</h1>
+										<h1 style="text-align: center;padding-top: 5%">Luzes TV</h1>
 									</div>
 									<div class="col-sm-4" style="min-width: 100%; padding: 0;">
 										<div class="d-flex justify-content-center" style="padding: 0px; margin: 0px; min-width: 100%; width: 100%;">
-											<div id="picker" class="disable-owl-swipe d-flex" style="padding-top:0px;padding-bottom:0px;"></div>
+											<div id="picker" class="disable-owl-swipe d-flex" style="padding-top: 5%;padding-bottom:0px;"></div>
 										</div>
 									</div>
 									<div class="row" style="max-width: 100%; margin: 0;">
-										<div class="col-sm-6" style="align-items: center; justify-content: center;">
-											<h3 style="width: 100%; align-items: center;">On/Off</h3>
-											<label style="" class="switch">
-												<input id=check1 type="checkbox" onclick="rgbCheckTogle()">
+										<div class="col-sm-4 d-flex justify-content-center" style="align-items: center; justify-content: center;">
+											<h3 style="width: 100%; text-align: center;font-family: 'Brush Script MT', cursive;">On/Off</h3>
+											<label style="display: block;text-align: center;line-height: 150%;font-size: .85em;" class="switch disable-owl-swipe">
+												<input id=check1 type="checkbox"  onclick="rgbCheckTogle()">
 												<span class="slider round"></span>
 											</label>
 										</div>
-										<div class="col-sm-6" >
+										<div class="col-sm-4" >
+
+										</div>
+										<div class="col-sm-4" >
 
 										</div>
 									</div>
 								</div>
+
 							</article>
-							<article class="thumbnail item" style="padding: 0px; margin: 0px; min-height: 100vh" itemscope="" itemtype="http://schema.org/CreativeWork">
-								<a class="blog-thumb-img" href="/5-ways-baby-boomers-changing-healthcare/" title="">
-									<img src="http://placehold.it/500x300/4DC7A0/ffffff" class="img-responsive" />
-								</a>
-								<div class="caption">
-									<h4 itemprop="headline">
-										<a href="#" rel="bookmark">5 Ways Baby Boomers Are Changing Healthcare</a>
-									</h4>
-									<p itemprop="text" class="flex-text text-muted">5 ways baby boomers are changing healthcare Starting in 2011, 3 million baby boomers each year reach retirement age....</p>
-									<p>							<a href="#" class="btn btn-primary btn-block">Button Text</a></p>
+							<article class="thumbnail item d-flex justify-content-center calculated-width" style="padding: 0px; margin: 0px; min-height: 100vh;border-radius: 40px;border-width: 12px;border-color: #555555;min-width: 100%;" itemscope="" itemtype="http://schema.org/CreativeWork">
+								<div style="border-radius: 20px">
+
 								</div>
+
 							</article>
 							<article class="thumbnail item" style="padding: 0px; margin: 0px; min-height: 100vh" itemscope="" itemtype="http://schema.org/CreativeWork">
 								<a class="blog-thumb-img" href="/5-ways-baby-boomers-changing-healthcare/" title="">
@@ -118,32 +116,28 @@
 		document.getElementById("owl-item").style.paddingLeft = "20px"
 		document.getElementById("owl-item").style.paddingTop = "10px"
 		document.getElementById("owl-item").style.paddingBottom = "10px"
-		document.getElementById("owl-padding").style.paddingRight = "10px"
-		document.getElementById("owl-padding").style.paddingLeft = "10px"
+
 		width_color = owl_width-60
 	}if (w > 480){
 		document.getElementById("owl-item").style.paddingRight = "20px"
 		document.getElementById("owl-item").style.paddingLeft = "20px"
 		document.getElementById("owl-item").style.paddingTop = "10px"
 		document.getElementById("owl-item").style.paddingBottom = "10px"
-		document.getElementById("owl-padding").style.paddingRight = "10px"
-		document.getElementById("owl-padding").style.paddingLeft = "10px"
+
 		width_color = owl_width/2-60
 	}if (w > 768){
 		document.getElementById("owl-item").style.paddingRight = "20px"
 		document.getElementById("owl-item").style.paddingLeft = "20px"
 		document.getElementById("owl-item").style.paddingTop = "10px"
 		document.getElementById("owl-item").style.paddingBottom = "10px"
-		document.getElementById("owl-padding").style.paddingRight = "10px"
-		document.getElementById("owl-padding").style.paddingLeft = "10px"
+
 		width_color = owl_width/2-60
 	}if (w > 992){
 		document.getElementById("owl-item").style.paddingRight = "30px"
 		document.getElementById("owl-item").style.paddingLeft = "30px"
 		document.getElementById("owl-item").style.paddingTop = "10px"
 		document.getElementById("owl-item").style.paddingBottom = "10px"
-		document.getElementById("owl-padding").style.paddingRight = "10px"
-		document.getElementById("owl-padding").style.paddingLeft = "10px"
+
 		width_color = owl_width/3-80
 	}
 	var colorPicker = new iro.ColorPicker("#picker", {
@@ -151,6 +145,7 @@
 		color: "rgb(255, 255, 255)",
 		borderWidth: 3,
 		borderColor: "#fff",
+		sliderMargin: 50,
 		layout: [
 			{
 				component: iro.ui.Wheel,
@@ -178,7 +173,7 @@
 
 		colorPicker.on('input:change', function(color) {
 			rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',');
-			document.getElementById("owl-item").style.backgroundColor = colorPicker.color.hexString;
+			document.getElementById("owl-item").style.borderColor = colorPicker.color.hexString;
 			if (checkBox.checked === true){
 				const sendrgb = {check:true, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
 				socket.emit("rgb",sendrgb);
@@ -198,7 +193,7 @@
 
 		socket.on('rgbt', function (data) {
 			var rgb = {r: data.rgbvalue[0], g: data.rgbvalue[1], b: data.rgbvalue[2]};
-			document.getElementById("owl-item").style.backgroundColor = 'rgb('+data.rgbvalue[0]+',' + data.rgbvalue[1] + ',' + data.rgbvalue[2] + ')';
+			document.getElementById("owl-item").style.borderColor = 'rgb('+data.rgbvalue[0]+',' + data.rgbvalue[1] + ',' + data.rgbvalue[2] + ')';
 			colorPicker.color.set(rgb);
 			document.getElementById('check1').checked = data.check;
 		});

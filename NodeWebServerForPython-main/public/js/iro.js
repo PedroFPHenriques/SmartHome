@@ -1729,7 +1729,6 @@
             // use layout shorthands
             if (!Array.isArray(layout)) {
                 switch (layout) {
-                    // TODO: implement some?
                     default:
                         layout = [
                             { component: IroWheel },
