@@ -5,7 +5,7 @@ var path = require('path');
 var Gpio = require('pigpio').Gpio;
 
 
- CONSTANTES 
+ //CONSTANTES
 
 const WebPort = 8080;
 greenLED = new Gpio(22, {mode: Gpio.OUTPUT});
@@ -19,9 +19,9 @@ var io = require('socket.io','net')(http) //require socket.io module and pass th
 
 
 // Start http webserver
-http.listen(8080, function() {  // This gets call when the web server is first started.
+http.listen(WebPort, function() {  // This gets call when the web server is first started.
 	console.log('-----------------------------------------------------------------');
-	console.log('Server running on Port '+8080);
+	console.log('Server running on Port '+WebPort);
 	console.log('-----------------------------------------------------------------');
 	} 
 );
