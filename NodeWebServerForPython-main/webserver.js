@@ -125,6 +125,9 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 		if (data.type === "flow"){
 			if (data.check === true) {
 				var r = 255, g = 0, b = 0;
+				redLED.pwmWrite(255);
+				greenLED.pwmWrite(0);
+				blueLED.pwmWrite(0);
 
 				setInterval(function () {
 					if (r > 0 && b == 0) {
