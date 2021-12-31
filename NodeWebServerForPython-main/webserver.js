@@ -2,7 +2,7 @@ var http = require('http').createServer(handler); //require http server, and cre
 var fs = require('fs'); //require filesystem module
 var url = require('url');
 var path = require('path');
-/*var Gpio = require('pigpio').Gpio;
+var Gpio = require('pigpio').Gpio;
 
 
  CONSTANTES 
@@ -10,7 +10,7 @@ var path = require('path');
 const WebPort = 8080;
 greenLED = new Gpio(22, {mode: Gpio.OUTPUT});
 blueLED = new Gpio(23, {mode: Gpio.OUTPUT});
-redLED = new Gpio(24, {mode: Gpio.OUTPUT});*/
+redLED = new Gpio(24, {mode: Gpio.OUTPUT});
 
  
 /*************** Web Browser Communication ****************************/
@@ -132,13 +132,13 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 			console.log(cor_actual)
 
 			//Muda os valores dos GPIO
-			/*redLED.pwmWrite(red);
+			redLED.pwmWrite(red);
 			greenLED.pwmWrite(green);
 			blueLED.pwmWrite(blue);
 		}else{
 			redLED.pwmWrite(0);
 			greenLED.pwmWrite(0);
-			blueLED.pwmWrite(0);*/
+			blueLED.pwmWrite(0);
 		}
 	});
 });
