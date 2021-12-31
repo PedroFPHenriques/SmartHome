@@ -146,7 +146,7 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 						greenLED.pwmWrite(g);
 					}
 					console.log("red"+r+"-green"+g+"-blue"+b)
-				}, 10);
+				}, 100);
 			}else{
 				redLED.pwmWrite(0);
 				greenLED.pwmWrite(0);
