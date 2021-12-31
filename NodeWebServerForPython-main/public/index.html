@@ -197,7 +197,7 @@
 				socket.emit("rgb",sendrgb);
 			}
 		}
-		function rgbCheckTogle(){
+		function rgbFlowTogle(){
 			if (checkBox.checked === true){
 				const sendrgb = {type:"flow", check:true};
 				socket.emit("flow",sendrgb);
