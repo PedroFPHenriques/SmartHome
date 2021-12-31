@@ -55,6 +55,13 @@
 												<span class="slider round"></span>
 											</label>
 										</div>
+										<div class="col-sm-4 d-flex justify-content-center" style="align-items: center; justify-content: center;">
+											<h3 style="width: 100%; text-align: center;font-family: 'Brush Script MT', cursive;">Flow</h3>
+											<label style="display: block;text-align: center;line-height: 150%;font-size: .85em;" class="switch disable-owl-swipe">
+												<input id=rgb_flow type="checkbox"  onclick="rgbFlowTogle()">
+												<span class="slider round"></span>
+											</label>
+										</div>
 										<div class="col-sm-4" >
 
 										</div>
@@ -182,12 +189,21 @@
 		function rgbCheckTogle(){
 			if (checkBox.checked === true){
 				rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',');
-				const sendrgb = {check:true, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
+				const sendrgb = {type:"onoff", check:true, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
 				socket.emit("rgb",sendrgb);
 			}else{
 				rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',');
-				const sendrgb = {check:false, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
+				const sendrgb = {type:"onoff", check:false, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
 				socket.emit("rgb",sendrgb);
+			}
+		}
+		function rgbCheckTogle(){
+			if (checkBox.checked === true){
+				const sendrgb = {type:"flow", check:true};
+				socket.emit("flow",sendrgb);
+			}else{
+				const sendrgb = {type:"flow", check:false};
+				socket.emit("flow",sendrgb);
 			}
 		}
 

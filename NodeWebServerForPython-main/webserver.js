@@ -121,25 +121,56 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 	socket.on('rgb', function(data) {
 		socket.broadcast.emit('rgbt', data);
 
-		if (data.check === true) {
-			//Aplicar alpha
-			var red = Math.ceil(data.rgbvalue[0] * data.alpha).toString()
-			var green = Math.ceil(data.rgbvalue[1] * data.alpha).toString()
-			var blue = Math.ceil(data.rgbvalue[2] * data.alpha).toString()
 
-			//variavel guardada para definir o valor rgb na conexao à socket
-			cor_actual = data
-			console.log(cor_actual)
+		if (data.type === "flow"){
+			if (data.check === true) {
+				var r = 255, g = 0, b = 0;
 
-			//Muda os valores dos GPIO
-			redLED.pwmWrite(red);
-			greenLED.pwmWrite(green);
-			blueLED.pwmWrite(blue);
+				setInterval(function () {
+					if (r > 0 && b == 0) {
+						r--;
+						g++;
+						blueLED.pwmWrite(b);
+					}
+					if (g > 0 && r == 0) {
+						g--;
+						b++;
+						redLED.pwmWrite(r);
+					}
+					if (b > 0 && g == 0) {
+						r++;
+						b--;
+						greenLED.pwmWrite(g);
+					}
+					console.log("red"+r+"-green"+g+"-blue"+b)
+				}, 10);
+			}else{
+				redLED.pwmWrite(0);
+				greenLED.pwmWrite(0);
+				blueLED.pwmWrite(0);
+			}
 		}else{
-			redLED.pwmWrite(0);
-			greenLED.pwmWrite(0);
-			blueLED.pwmWrite(0);
+			if (data.check === true) {
+				//Aplicar alpha
+				var red = Math.ceil(data.rgbvalue[0] * data.alpha).toString()
+				var green = Math.ceil(data.rgbvalue[1] * data.alpha).toString()
+				var blue = Math.ceil(data.rgbvalue[2] * data.alpha).toString()
+
+				//variavel guardada para definir o valor rgb na conexao à socket
+				cor_actual = data
+				console.log(cor_actual)
+
+				//Muda os valores dos GPIO
+				redLED.pwmWrite(red);
+				greenLED.pwmWrite(green);
+				blueLED.pwmWrite(blue);
+			}else{
+				redLED.pwmWrite(0);
+				greenLED.pwmWrite(0);
+				blueLED.pwmWrite(0);
+			}
 		}
+
 	});
 });
 
