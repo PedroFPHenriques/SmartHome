@@ -1,218 +1,745 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - Owl Carousel 2 Equal Heights (css only)</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="images/favicon.ico" />
-  <link rel='stylesheet' href='css/bootstrap.min.css'>
-  <link rel='stylesheet' href='css/botao.css'>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.carousel.min.css'>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.6/assets/owl.theme.default.min.css'>
-  <link rel='stylesheet' href='https://rawgit.com/bryanwillis/a3d4935336174c9d9deb58dff040207d/raw/d06b38aa36e868bc70d022293f4c3bd8600b50a3/flexbox-bs3.css'>
-  <link rel="stylesheet" href="css/style.css">
-</head>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Vanilla Bootstrap v4.2.1 Theme</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/templatemo-main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-<body style="font-family: 'Courier New', monospace;">
-	<div class="container" style="padding: 0px; margin: 0px; width: 100%">
-		<div class="row" style="max-width: 100%; margin: 0;">
-			<div class="col-sm-1">
-				<ul class="nav">
-					<li class="nav-item">
-						<a class="nav-link active" href="#">Active</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" href="#">Disabled</a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-sm-11" style="padding: 0;">
-				<div class="latest-blog-posts bg-white pt60 pb60">
-					<div class="container-fluid" style="padding: 0px; margin: 0px; min-width: 100%">
-						<div id="owl-demo-2" class="owl-carousel owl-theme" style="padding: 0px; margin: 0px; min-width: 100%; max-width: 100%; min-height: 100vh;display: flex;">
-							<article id="owl-item" class="thumbnail item d-flex justify-content-center calculated-width" style="padding: 0px; margin: 0px; min-height: 100vh;border-radius: 40px;border-width: 12px;border-color: #555555;min-width: 100%;" itemscope="" itemtype="http://schema.org/CreativeWork">
-								<div style="border-radius: 20px">
-									<div class="d-flex justify-content-center" style="min-width: 100%;">
-										<h1 style="text-align: center;padding-top: 5%">Luzes TV</h1>
+    </head>
+<!--
+Vanilla Template
+https://templatemo.com/tm-526-vanilla
+-->
+<body>
+    <nav id="nav_inicial" class="navbar navbar-expand fixed-top" style="z-index: 10;background-color: #212121;" >
+        <div class="" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item" style="vertical-align: middle;padding-right: 1rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" onclick="hide_nav()" width="25px" height="100%" fill="white" class="bi bi-list list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand p-0" style="line-height: 40px;" href="#">Smart Home</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item" style="padding-right: 2rem;">
+                    <div class="dropdown" style="background-color:  #212121;">
+                        <button type="button" class="btn btn-secondary dropdown-toggle btn-circle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white"><i class="fa fa-check"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" style="width: 250px;padding-top: 1rem;padding-bottom: 1rem; border-left: 1px solid #3d3d3d;border-right: 1px solid #3d3d3d;border-bottom: 1px solid #3d3d3d;" aria-labelledby="dropdownMenuButton">
+                            <div class="row nav-item" style="max-width: 100%; margin-right: -30px; margin-left: 0;padding-bottom: 1rem;">
+                                <div class="col-4">
+                                    <button type="button" class="btn-xl btn-circle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white">
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                </div>
+                                <div class="col-8" style="text-align: left;">
+                                    <div class="d-flex h-100"><p class="my-auto" style="color: white;font-size: 20px">MonyAlmas</p></div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider" style="padding-bottom: 1rem; border-color: #3d3d3d;"></div>
+                            <div class="dropdown-item">
+                                <div class="row">
+                                    <div class="col-3 text-center p-0">
+                                        <i class="fa fa-drivers-license-o" style="display: inline;color: white;"></i>
+                                    </div>
+                                    <div class="col-9 text-left p-0">
+                                        <a class="dropdown-item" style="display: inline;padding-left: 10px;color: white;" href="#">Gerir Conta</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-item">
+                                <div class="row">
+                                    <div class="col-3 text-center p-0">
+                                        <i class="fa fa-cog" style="display: inline;color: white;"></i>
+                                    </div>
+                                    <div class="col-9 text-left p-0">
+                                        <a class="dropdown-item" style="display: inline;padding-left: 10px;color: white;" href="#">Definições</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-item">
+                                <div class="row">
+                                    <div class="col-3 text-center p-0">
+                                        <i class="fa fa-sign-out" style="display: inline;color: white;"></i>
+                                    </div>
+                                    <div class="col-9 text-left p-0">
+                                        <a class="dropdown-item" style="display: inline;padding-left: 10px;color: white;" href="#">LogOut</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="nav_background" class="fixed-top nav_background_0" onclick="hide_nav()" style="background-color: black; z-index: 50;width: 100%;height: 100vh;opacity: 0.5;" >
+    </div>
+    <div id="nav" class="m-0 p-0 nav_0">
+        <div class="fixed-side-navbar w-100">
+            <ul class="nav flex-column align-items-left">
+                <li class="" style="height: 60px">
+                    <nav id="nav_secundaria" class="navbar navbar-expand fixed-top" style="background-color: #212121;z-index: 100;width: 100%;" >
+                        <div class="">
+                            <ul class="navbar-nav">
+                                <li class="nav-item" style="vertical-align: middle;padding-right: 1rem;">
+                                    <a onclick="hide_nav()" class=" list" style="width: 40px;height: 40px;margin-right: 0 !important;"></a>
+                                </li>
+                                <li class="nav-item" style="color: white;">
+                                    <a class="navbar-brand p-0" style="line-height: 40px;" href="#">Smart Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </li>
+                <li class="d-flex padding_nav_li" style="height: 60px;">
+                    <a class="" style="display: flex;justify-content: center;align-items: center;" href="#home">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="100%" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                        </svg>
+                        <div class="" style="display: flex;height: 25px;">
+                            <span style="align-self: flex-end;margin-left: 1.5rem;">Home</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="d-flex padding_nav_li" style="height: 60px;">
+                    <a class="" style="display: flex;justify-content: center;align-items: center;" href="#services">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="100%" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
+                            <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
+                        </svg>
+                        <div class="" style="display: flex;height: 25px;">
+                            <span style="align-self: flex-end;margin-left: 1.5rem;">Iluminação</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="d-flex padding_nav_li" style="height: 60px;">
+                    <a class="" style="display: flex;justify-content: center;align-items: center;" href="#portfolio">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="100%" fill="currentColor" class="bi bi-tv" viewBox="0 0 16 16">
+                            <path d="M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zM13.991 3l.024.001a1.46 1.46 0 0 1 .538.143.757.757 0 0 1 .302.254c.067.1.145.277.145.602v5.991l-.001.024a1.464 1.464 0 0 1-.143.538.758.758 0 0 1-.254.302c-.1.067-.277.145-.602.145H2.009l-.024-.001a1.464 1.464 0 0 1-.538-.143.758.758 0 0 1-.302-.254C1.078 10.502 1 10.325 1 10V4.009l.001-.024a1.46 1.46 0 0 1 .143-.538.758.758 0 0 1 .254-.302C1.498 3.078 1.675 3 2 3h11.991zM14 2H2C0 2 0 4 0 4v6c0 2 2 2 2 2h12c2 0 2-2 2-2V4c0-2-2-2-2-2z"/>
+                        </svg>
+                        <div class="" style="display: flex;height: 25px;">
+                            <span style="align-self: flex-end;margin-left: 1.5rem;">TV</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="d-flex padding_nav_li" style="height: 60px;">
+                    <a class="" style="display: flex;justify-content: center;align-items: center;" href="#our-story">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="100%" fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
+                            <path d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5z"/>
+                        </svg>
+                        <div class="" style="display: flex;height: 25px;">
+                            <span style="align-self: flex-end;margin-left: 1.5rem;">Música</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="d-flex padding_nav_li" style="height: 60px;">
+                    <a class="" style="display: flex;justify-content: center;align-items: center;" href="#contact-us">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="100%" fill="currentColor" class="bi bi-shield" viewBox="0 0 16 16">
+                            <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
+                        </svg>
+                        <div class="" style="display: flex;height: 25px;">
+                            <span style="align-self: flex-end;margin-left: 1.5rem;">Segurança</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="nav_vertical" class="container d-flex m-0 p-0 nav_v">
+        <div class="fixed-side-navbar w-100">
+            <ul id="nav_extended" class="nav flex-column align-items-left">
+                <li class="d-flex" style="height: 60px">
+                    <a class="padding_nav_li" style="display: flex;justify-content: center;align-items: center;" href="#home">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="100%" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                        </svg>
+                        <div class="hide_nav_text" style="display: none;">
+                            <div class="" style="display: flex;height: 25px;">
+                                <span style="align-self: flex-end;margin-left: 1.5rem;">Home</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="d-flex" style="height: 60px">
+                    <a class="padding_nav_li" style="display: flex;justify-content: center;align-items: center;" href="#services">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="100%" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
+                            <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
+                        </svg>
+                        <div class="hide_nav_text" style="display: none;">
+                            <div class="" style="display: flex;height: 25px;">
+                                <span style="align-self: flex-end;margin-left: 1.5rem;">Iluminação</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="d-flex" style="height: 60px">
+                    <a class="padding_nav_li" style="display: flex;justify-content: center;align-items: center;" href="#portfolio">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="100%" fill="currentColor" class="bi bi-tv" viewBox="0 0 16 16">
+                            <path d="M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zM13.991 3l.024.001a1.46 1.46 0 0 1 .538.143.757.757 0 0 1 .302.254c.067.1.145.277.145.602v5.991l-.001.024a1.464 1.464 0 0 1-.143.538.758.758 0 0 1-.254.302c-.1.067-.277.145-.602.145H2.009l-.024-.001a1.464 1.464 0 0 1-.538-.143.758.758 0 0 1-.302-.254C1.078 10.502 1 10.325 1 10V4.009l.001-.024a1.46 1.46 0 0 1 .143-.538.758.758 0 0 1 .254-.302C1.498 3.078 1.675 3 2 3h11.991zM14 2H2C0 2 0 4 0 4v6c0 2 2 2 2 2h12c2 0 2-2 2-2V4c0-2-2-2-2-2z"/>
+                        </svg>
+                        <div class="hide_nav_text" style="display: none;">
+                            <div class="" style="display: flex;height: 25px;">
+                                <span style="align-self: flex-end;margin-left: 1.5rem;">TV</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="d-flex" style="height: 60px">
+                    <a class="padding_nav_li" style="display: flex;justify-content: center;align-items: center;" href="#our-story">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="100%" fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
+                            <path d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5z"/>
+                        </svg>
+                        <div class="hide_nav_text" style="display: none;">
+                            <div class="" style="display: flex;height: 25px;">
+                                <span style="align-self: flex-end;margin-left: 1.5rem;">Música</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="d-flex" style="height: 60px">
+                    <a class="padding_nav_li" style="display: flex;justify-content: center;align-items: center;" href="#contact-us">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="100%" fill="currentColor" class="bi bi-shield" viewBox="0 0 16 16">
+                            <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
+                        </svg>
+                        <div class="hide_nav_text" style="display: none;">
+                            <div class="" style="display: flex;height: 25px;">
+                                <span style="align-self: flex-end;margin-left: 1.5rem;">Segurança</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid m-0 p-0">
+        <div id="content" class="m-0 padding_nav">
+            <div class="parallax-content baner-content" id="home">
+                <div class="container-fluid m-0 p-0">
+                    <div id=my-slider class="my-slider" style="padding-top: 25px;">
+                        <div style="height: 100vh;">
+                            <div class="d-flex align-items-center" style="height: 100%;width: 100%;">
+                                <div id="teste" class="slide">
+                                    
+
+                                    <!--Titulo-->
+                                    <div class="row titulo margin_slide">
+                                        <div class="col-12 colortab d-flex justify-content-center align-items-center" style="padding:0; max-width: 100%; min-height: 100%; border-radius: 20px; background-color: #2d2d2d;">
+                                            <label for="select_led"></label>
+                                            <select style="color: #aaaaaa; font-size: calc(1rem + .9vw); background-color: #2d2d2d; border:0px; outline:0px; text-align: center;" class="disable-swipe" name="select_led" id="select_led">
+                                                <option style="color: #aaaaaa; font-size: calc(1.325rem);" value="tv">Led's TV</option>
+                                                <option style="color: #aaaaaa; font-size: calc(1.325rem);" value="sala">Led's Sala</option>
+                                                <option style="color: #aaaaaa; font-size: calc(1.325rem);" value="quarto">Led's Quarto</option>
+                                                <option style="color: #aaaaaa; font-size: calc(1.325rem);" value="cozinha">Led's Cozinha</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+
+                                    <!--Color Picker-->
+                                    <div class="row margin_slide" style="max-width: 100%; min-height: 40%;">
+                                        <div class="col-sm-12 colortab" style="min-width: 100%; padding: 0;">
+                                            <div class="d-flex justify-content-center" style="padding: 0; margin: 0; min-width: 100%; width: 100%;min-height: 100%;">
+                                                <div id="picker" class="disable-swipe picker display: flex; flex-direction: column; justify-content: center; align-items: center;" style="padding-bottom:0;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!--Alpha-->
+                                    <div class="row margin_slide alpha_slider disable-swipe">
+                                        <div class="col-sm-4 colortab" style="min-width: 100%; padding: 0;">
+                                            <div class="row m-0" style="max-width: 100%; min-height: 100%; border-radius: 20px; background-color: #2d2d2d;">
+                                                <div class="col-2 d-flex justify-content-center align-items-center" style="padding: 0;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#aaaaaa" class="bi bi-sun" viewBox="0 0 16 16">
+                                                        <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="col-8 d-flex align-items-center" style="padding: 0;">
+                                                    <input id="alpha_range" type="range" class="disable-swipe form-range" min="0" max="10" id="customRange2">
+                                                </div>
+                                                <div class="col-2 d-flex justify-content-center align-items-center" style="padding: 0;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#aaaaaa" class="bi bi-sun-fill" viewBox="0 0 16 16">
+                                                        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!--Color selector-->
+									<div class="row margin_slide color_selector">
+                                        <div class="col-12 p-0 d-flex justify-content-center align-items-center" style="min-width: 100%;">
+                                            <div class="row d-flex justify-content-center align-items-center" style="min-width: 100%;">
+                                                <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                                                    <div id="circulo1" class="circle element disable-swipe d-flex justify-content-center align-items-center" style="border-width: 1.4px;border-color: #aaaaaa;border-style: solid;border-radius: 35%;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" id="add_color" fill="#aaaaaa" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                                                    <div id="circulo1" class="circle element disable-swipe" style="background-color:rgb(0,255,45);"></div>
+                                                </div>
+                                                <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                                                    <div id="circulo2" class="circle element disable-swipe" style="background-color:rgb(255,60,0);"></div>
+                                                </div>
+                                                <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                                                    <div id="circulo3" class="circle element disable-swipe" style="background-color:rgb(255,0,200);"></div>
+                                                </div>
+                                                <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                                                    <div id="circulo4" class="circle element disable-swipe" style="background-color:rgb(0,0,255);"></div>
+                                                </div>
+                                                <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                                                    <div id="circulo5" class="circle element disable-swipe" style="background-color:rgb(255,200,140);"></div>
+                                                </div>
+                                            </div>
+                                        </div>
 									</div>
-									<div class="col-sm-4" style="min-width: 100%; padding: 0;">
-										<div class="d-flex justify-content-center" style="padding: 0px; margin: 0px; min-width: 100%; width: 100%;">
-											<div id="picker" class="disable-owl-swipe d-flex" style="padding-top: 5%;padding-bottom:0px;"></div>
-										</div>
-									</div>
-									<div class="row" style="max-width: 100%; margin: 0;">
-										<div class="col-sm-4 d-flex justify-content-center" style="align-items: center; justify-content: center;">
-											<h3 style="width: 100%; text-align: center;font-family: 'Brush Script MT', cursive;">On/Off</h3>
-											<label style="display: block;text-align: center;line-height: 150%;font-size: .85em;" class="switch disable-owl-swipe">
-												<input id=check1 type="checkbox"  onclick="rgbCheckTogle()">
-												<span class="slider round"></span>
-											</label>
-										</div>
-										<div class="col-sm-4 d-flex justify-content-center" style="align-items: center; justify-content: center;">
-											<h3 style="width: 100%; text-align: center;font-family: 'Brush Script MT', cursive;">Flow</h3>
-											<label style="display: block;text-align: center;line-height: 150%;font-size: .85em;" class="switch disable-owl-swipe">
-												<input id=rgb_flow type="checkbox"  onclick="rgbFlowTogle()">
-												<span class="slider round"></span>
-											</label>
-										</div>
-										<div class="col-sm-4" >
 
-										</div>
-										<div class="col-sm-4" >
+                                    
+                                    <!--Bottom Controlls-->
+                                    <div class="row margin_slide bottom_row">
+                                        <div class="col-2 d-flex justify-content-center align-items-center" style="padding: 0;">
+                                            <div class="element_power disable-swipe d-flex justify-content-center align-items-center">
+												<svg xmlns="http://www.w3.org/2000/svg" fill="#aaaaaa" class="bi bi-arrow-repeat disable-swipe bottom_commands3" viewBox="0 0 16 16">
+                                                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                                                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                                                </svg>
+											</div>
+                                        </div>
+                                        <div class="col-6 colortab d-flex justify-content-center align-items-center" style="padding: 0;">
+                                            <input id="speed_range" type="range" class="disable-swipe form-range" style="max-width: 90%;" min="0" max="10" id="customRange2">
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-center align-items-center" style="padding: 0;">
+                                            <div id="" class="power_button element_power disable-swipe d-flex justify-content-center align-items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="#aaaaaa" class="bi bi-clock disable-swipe bottom_commands2" viewBox="0 0 16 16">
+                                                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-center align-items-center" style="padding: 0;">
+                                            <div id="circulo_power" class="power_button circle_power element_power disable-swipe d-flex justify-content-center align-items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" id="power_svg" fill="#aaaaaa" class="bi bi-power power_button bottom_commands" viewBox="0 0 16 16">
+                                                    <path d="M7.5 1v7h1V1h-1z"/>
+                                                    <path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 100vh;">
+                            <div class="d-flex align-items-center" style="height: 100%;width: 100%;">
+                                <div class="slide">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 100vh;">
+                            <div class="d-flex align-items-center" style="height: 100%;width: 100%;">
+                                <div class="slide">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 100vh;">
+                            <div class="d-flex align-items-center" style="height: 100%;width: 100%;">
+                                <div class="slide">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="height: 100vh;">
+                            <div class="d-flex align-items-center" style="height: 100%;width: 100%;">
+                                <div class="slide">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-content" id="services">
+                <div class="container">
 
-										</div>
-									</div>
-								</div>
+                </div>
+            </div>
+            <div class="parallax-content projects-content" style="background-color: white" id="portfolio">
+                <div class="container">
 
-							</article>
-							<article class="thumbnail item d-flex justify-content-center calculated-width" style="padding: 0px; margin: 0px; min-height: 100vh;border-radius: 40px;border-width: 12px;border-color: #555555;min-width: 100%;" itemscope="" itemtype="http://schema.org/CreativeWork">
-								<div style="border-radius: 20px">
+                </div>
+            </div>
+            <div class="tabs-content" id="our-story">
+                <div class="container">
 
-								</div>
+                </div>
+            </div>
+            <div class="parallax-content contact-content" id="contact-us">
+                <div class="container">
 
-							</article>
-							<article class="thumbnail item" style="padding: 0px; margin: 0px; min-height: 100vh" itemscope="" itemtype="http://schema.org/CreativeWork">
-								<a class="blog-thumb-img" href="/5-ways-baby-boomers-changing-healthcare/" title="">
-									<img src="http://placehold.it/500x300/4DC7A0/ffffff" class="img-responsive" />
-								</a>
-								<div class="caption">
-									<h4 itemprop="headline">
-										<a href="#" rel="bookmark">5 Ways Baby Boomers Are Changing Healthcare</a>
-									</h4>
-									<p itemprop="text" class="flex-text text-muted">5 ways baby boomers are changing healthcare Starting in 2011, 3 million baby boomers each year reach retirement age....</p>
-									<a href="#" class="btn btn-primary btn-block">Button Text</a>
-								</div>
-							</article>
-							<article class="thumbnail item" style="padding: 0px; margin: 0px; min-height: 100vh" itemscope="" itemtype="http://schema.org/CreativeWork">
-								<a class="blog-thumb-img" href="/5-ways-baby-boomers-changing-healthcare/" title="">
-									<img src="http://placehold.it/500x300/4DC7A0/ffffff" class="img-responsive" />
-								</a>
-								<div class="caption">
-									<h4 itemprop="headline">
-										<a href="#" rel="bookmark">5 Ways Baby Boomers Are Changing Healthcare</a>
-									</h4>
-									<p itemprop="text" class="flex-text text-muted">5 ways baby boomers are changing healthcare Starting in 2011, 3 million baby boomers each year reach retirement age....</p>
-									<a href="#" class="btn btn-primary btn-block">Button Text</a>
-								</div>
-							</article>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-  <script type="text/javascript" src="js/iro.js"></script>
-  <script type="text/javascript" src='https://cdn.jsdelivr.net/g/jquery@2.1.4,jquery.migrate@1.4.1,bootstrap@3.3.7,jquery.matchheight@0.7.0'></script>
-  <script type="text/javascript" src='js/owl.js'></script>
-  <script type="text/javascript" src="js/script.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-    var w = window.innerWidth;
-    var width_color
-	var owl_width = $("#owl-demo-2").width()
-	if (w > 0){
-		document.getElementById("owl-item").style.paddingRight = "20px"
-		document.getElementById("owl-item").style.paddingLeft = "20px"
-		document.getElementById("owl-item").style.paddingTop = "10px"
-		document.getElementById("owl-item").style.paddingBottom = "10px"
+                </div>
+            </div>
+        </div>
+    </div>
 
-		width_color = owl_width-60
-	}if (w > 480){
-		document.getElementById("owl-item").style.paddingRight = "20px"
-		document.getElementById("owl-item").style.paddingLeft = "20px"
-		document.getElementById("owl-item").style.paddingTop = "10px"
-		document.getElementById("owl-item").style.paddingBottom = "10px"
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="node_modules/@jaames/iro/dist/iro.js"></script>
+    <script type="text/javascript" src="node_modules/socket.io/client-dist/socket.io.js"></script>
+    <script src="js/tiny-slider.js"></script>
 
-		width_color = owl_width/2-60
-	}if (w > 768){
-		document.getElementById("owl-item").style.paddingRight = "20px"
-		document.getElementById("owl-item").style.paddingLeft = "20px"
-		document.getElementById("owl-item").style.paddingTop = "10px"
-		document.getElementById("owl-item").style.paddingBottom = "10px"
+    <script>
+        $(document).ready(function(){
 
-		width_color = owl_width/2-60
-	}if (w > 992){
-		document.getElementById("owl-item").style.paddingRight = "30px"
-		document.getElementById("owl-item").style.paddingLeft = "30px"
-		document.getElementById("owl-item").style.paddingTop = "10px"
-		document.getElementById("owl-item").style.paddingBottom = "10px"
+          // Add smooth scrolling to all links
+          $(".fixed-side-navbar a, .primary-button a").on('click', function(event) {
 
-		width_color = owl_width/3-80
-	}
-	var colorPicker = new iro.ColorPicker("#picker", {
-		width: width_color,
-		color: "rgb(255, 255, 255)",
-		borderWidth: 3,
-		borderColor: "#fff",
-		sliderMargin: 50,
-		layout: [
-			{
-				component: iro.ui.Wheel,
-			},
-			{
-				component: iro.ui.Slider,
-				options: {
-					sliderType: 'alpha'
-				}
-			}
-		]
-	});
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
 
-  </script>
-  <script>
-	  $(".disable-owl-swipe").on("touchstart mousedown", function(e) {
-		  // Prevent carousel swipe
-		  e.stopPropagation();
-	  })
-  </script>
-  <script>
-		var socket = io();
-		var rgbvalue;
-		var checkBox = document.getElementById("check1");
+              // Store hash
+              var hash = this.hash;
 
-		colorPicker.on('input:change', function(color) {
-			rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',');
-			document.getElementById("owl-item").style.borderColor = colorPicker.color.hexString;
-			if (checkBox.checked === true){
-				const sendrgb = {check:true, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
-				socket.emit("rgb",sendrgb);
-			}
-	    });
-		function rgbCheckTogle(){
-			if (checkBox.checked === true){
-				rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',');
-				const sendrgb = {type:"onoff", check:true, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
-				socket.emit("rgb",sendrgb);
-			}else{
-				rgbvalue = colorPicker.color.rgbString.replace(/[^\d,]/g, '').split(',');
-				const sendrgb = {type:"onoff", check:false, rgbvalue:rgbvalue, alpha:colorPicker.color.alpha};
-				socket.emit("rgb",sendrgb);
-			}
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('#content').animate({
+                scrollTop: $(hash).offset().top
+              }, 20, function(){
+           
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            } // End if
+          });
+        });
+    </script>
+
+    <script>
+        jQuery(document).ready(function($) {
+
+            'use strict';
+
+            var top_header = $('.parallax-content');
+            top_header.css({'background-position':'center center'}); // better use CSS
+
+            $(window).scroll(function () {
+                var st = $(this).scrollTop();
+                top_header.css({'background-position':'center calc(50% + '+(st*.5)+'px)'});
+            });
+
+            $('body').scrollspy({
+                target: '.fixed-side-navbar',
+                offset: 200
+            });
+
+            // smoothscroll on sidenav click
+
+            $('.tabgroup > div').hide();
+            $('.tabgroup > div:first-of-type').show();
+            $('.tabs a').click(function(e){
+                e.preventDefault();
+                var $this = $(this),
+                    tabgroup = '#'+$this.parents('.tabs').data('tabgroup'),
+                    others = $this.closest('li').siblings().children('a'),
+                    target = $this.attr('href');
+                others.removeClass('active');
+                $this.addClass('active');
+                $(tabgroup).children('div').hide();
+                $(target).show();
+
+            });
+        });
+    </script>
+
+    <script>
+        const slider1 = tns({
+            container: '.my-slider',
+            items: 3,
+            slideBy: "page",
+            mouseDrag: true,
+            swipeAngle: false,
+            speed: 400,
+            controls: false,
+            nav: false,
+            navPosition: "bottom",
+            loop: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    gutter: 20,
+                    edgePadding: 20
+                },
+                480: {
+                    items: 1,
+                    gutter: 30,
+                    edgePadding: 30
+                },
+                768: {
+                    items: 2,
+                    loop: false,
+                    gutter: 30,
+                    edgePadding: 30
+                },
+                992: {
+                    items: 2,
+                    loop: false,
+                    gutter: 80,
+                    edgePadding: 80
+                },
+                1300: {
+                    items: 3,
+                    loop: false,
+                    gutter: 80,
+                    edgePadding: 80
+                }
+            }
+        });
+
+        /*const slider2 = tns({
+            container: ".slider2",
+            items: 3,
+            slideBy: "page",
+            loop: false,
+            startIndex: 6
+        });*/
+    </script>
+
+
+    <script>
+        var check = 0;
+        var nav = document.getElementById("nav");
+        var nav_background = document.getElementById("nav_background");
+
+        function hide_nav(){
+            if (window.innerWidth > 767){
+                if (check === 0){
+                    document.getElementById("nav_vertical").style.width = "13rem";
+                    document.getElementById("content").style.paddingLeft = "13rem";
+                    let x = document.getElementsByClassName("hide_nav_text");
+                    let i;
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "block";
+                    }
+                    check = 1
+                }else{
+                    document.getElementById("nav_vertical").style.width = "calc(40px + 2rem)";
+                    document.getElementById("content").style.paddingLeft = "calc(40px + 2rem)";
+                    let x = document.getElementsByClassName("hide_nav_text");
+                    let i;
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    check = 0
+                }
+            }
+            else{
+                if (check === 0){
+                    nav.classList.remove('nav_0');
+                    nav_background.classList.remove('nav_background_0');
+                    nav.classList.add('nav_1');
+                    nav_background.classList.add('nav_background_1');
+                    check = 1
+                }else{
+                    nav.classList.remove('nav_1');
+                    nav_background.classList.remove('nav_background_1');
+                    nav.classList.add('nav_0');
+                    nav_background.classList.add('nav_background_0');
+                    check = 0
+                }
+            }
+
+        }
+    </script>
+
+    <script>
+        $(".disable-swipe").on("touchstart mousedown", function(e) {
+            // Prevent carousel swipe
+            e.stopPropagation();
+        })
+    </script>
+
+    <script>
+        let picker = document.getElementById("picker");
+        let colorPicker = new iro.ColorPicker(picker, {
+            width: picker.parentElement.clientWidth - (picker.parentElement.clientWidth*0.1),
+            color: "rgb(255, 255, 255)",
+            borderWidth: 0,
+            borderColor: "#fff",
+            sliderMargin: 50,
+            layout: [
+                {
+                    component: iro.ui.Wheel,
+                    options: {
+                    }
+
+                },
+            ]
+        });
+    </script>
+
+    <script>
+        window.addEventListener("resize", function (){
+            colorPicker.resize(picker.parentElement.clientWidth - (picker.parentElement.clientWidth*0.2));
+        });
+    </script>
+
+    <script>
+        let socket = io();
+        let checkBox = document.getElementById("check1");
+		const $circles = Array.from(document.getElementsByClassName("circle"))
+
+
+
+		// envia mensagem de mudança de cor ao mudar pelo picker
+        colorPicker.on('input:change', function() {
+			$circles.forEach($circle => $circle.classList.remove("active"))
+            rgbCheckTogle()
+        });
+
+
+		// envia mensagem de mudança de cor ao mudar o alpha
+		document.getElementById('alpha_range').addEventListener('input', function () {
+		  rgbCheckTogle();
+		}, false);
+
+
+		// envia mensagem de mudança de cor ao mudar o pelo color selector
+		function handleClick(evt) {
+            if (!evt.target.classList.contains("active")){
+               $circles.forEach($circle => $circle.classList.remove("active"))
+                setTimeout(
+                function() {
+                    evt.target.classList.add("active")
+                },
+                25
+                );
+                colorPicker.color.set(evt.target.style.backgroundColor);
+                rgbCheckTogle()
+            }else{
+                if (circulo_power.classList.contains("active")){
+                    setTimeout(
+                        function() {
+                            circulo_power.classList.remove("active")
+                            rgbCheckTogle()
+                        },25);
+                }
+                evt.target.classList.remove("active")
+                let rgbstr = "rgb(255, 255, 255)";
+                colorPicker.color.set(rgbstr);
+            }
 		}
-		function rgbFlowTogle(){
-			if (checkBox.checked === true){
-				const sendrgb = {type:"flow", check:true};
-				socket.emit("rgb",sendrgb);
-			}else{
-				const sendrgb = {type:"flow", check:false};
-				socket.emit("rgb",sendrgb);
-			}
-		}
+		$circles.forEach($circle => $circle.addEventListener("click", handleClick))
 
-		socket.on('rgbt', function (data) {
-			var rgb = {r: data.rgbvalue[0], g: data.rgbvalue[1], b: data.rgbvalue[2]};
-			document.getElementById("owl-item").style.borderColor = 'rgb('+data.rgbvalue[0]+',' + data.rgbvalue[1] + ',' + data.rgbvalue[2] + ')';
-			colorPicker.color.set(rgb);
-			document.getElementById('check1').checked = data.check;
-		});
-	</script>
+
+
+        let circulo_power = document.getElementById("circulo_power")
+        circulo_power.addEventListener("click", function() {
+            if(circulo_power.classList.contains("active")){
+                setTimeout(function() {circulo_power.classList.remove("active");rgbCheckTogle();},25);
+                
+            }
+            else{
+                setTimeout(function() {circulo_power.classList.add("active");rgbCheckTogle();},25);
+            }
+        });
+
+        function rgbCheckTogle(){
+            let rgbvalue = colorPicker.color.rgbString.replace(/[^0-9.,]/g, '').split(',');
+			let alpha_range = document.getElementById('alpha_range');
+			rgbvalue.push((alpha_range.value/10).toString())
+            let color_selector = null;
+            let contador = 0;
+            $circles.forEach($circle =>
+                function(){
+                    contador += 1;
+                    if ($circle.classList.contains("active")){
+                        let color_selector = $circles.indexOf($circle);
+                    }else{
+                        if(contador == ($circles.length - 1)){
+                            let color_selector = null;   
+                        }
+                    }
+                }
+            );   
+            if (circulo_power.classList.contains("active")){
+                const sendrgb = {type:"onoff", check:true, rgbvalue:rgbvalue, color_selector:color_selector};
+                console.log("enviado")
+                console.log(sendrgb);
+                socket.emit("rgb",sendrgb);
+            }else{
+                const sendrgb = {type:"onoff", check:false, rgbvalue:rgbvalue, color_selector:color_selector};
+                console.log("enviado")
+                console.log(sendrgb);
+                socket.emit("rgb",sendrgb);
+            }
+        }
+
+        function rgbFlowTogle(){
+            if (checkBox.checked === true){
+                const sendrgb = {type:"flow", check:true};
+                socket.emit("rgb",sendrgb);
+            }else{
+                const sendrgb = {type:"flow", check:false};
+                socket.emit("rgb",sendrgb);
+            }
+        }
+
+        socket.on('rgbt', function (data) {
+            let rgbstr = "rgb(" + data.rgbvalue[0] + ", " + data.rgbvalue[1] + ", " + data.rgbvalue[2] + ")";
+            colorPicker.color.set(rgbstr);
+			document.getElementById('alpha_range').value = parseFloat(data.rgbvalue[3])*10;
+            if (data.check){
+                circulo_power.classList.add("active");
+            }else{
+                if(circulo_power.classList.contains("active")){
+                    circulo_power.classList.remove("active");
+                }
+            }
+        });
+
+        socket.on('start', function (data) {
+            let rgbstr = "rgb(" + data.rgbvalue[0] + ", " + data.rgbvalue[1] + ", " + data.rgbvalue[2] + ")";
+            colorPicker.color.set(rgbstr);
+			document.getElementById('alpha_range').value = parseFloat(data.rgbvalue[3])*10;
+            console.log("recebido")
+            console.log(data)
+            if (data.check){
+                if(!circulo_power.classList.contains("active")){
+                    circulo_power.classList.add("active");
+                }
+            }else{
+                if(circulo_power.classList.contains("active")){
+                    circulo_power.classList.remove("active");
+                }
+            }
+            if (data.color_selector){
+                let elem_color_selector = $circles[color_selector]
+                if(!elem_color_selector.classList.contains("active")){
+                    elem_color_selector.classList.add("active");
+                }
+            }else{
+                $circles.forEach($circle => $circle.classList.remove("active"))
+            }
+            
+        });
+    </script>
+
 </body>
 </html>

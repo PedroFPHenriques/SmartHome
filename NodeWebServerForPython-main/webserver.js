@@ -1,8 +1,8 @@
 var http = require('http').createServer(handler); //require http server, and create server with function handler()
-var fs = require('fs'); //require filesystem module
-var url = require('url');
-var path = require('path');
-var Gpio = require('pigpio').Gpio;
+import { readFile } from 'fs'; //require filesystem module
+import { parse } from 'url';
+import { extname as _extname } from 'path';
+import { Gpio } from 'pigpio';
 
 
  //CONSTANTES
@@ -15,7 +15,7 @@ redLED = new Gpio(24, {mode: Gpio.OUTPUT});
  
 /*************** Web Browser Communication ****************************/
 
-var io = require('socket.io','net')(http) //require socket.io module and pass the http object (server)
+var io = require('socket.io','net')(http); //require socket.io module and pass the http object (server)
 
 
 // Start http webserver
@@ -29,9 +29,9 @@ http.listen(WebPort, function() {  // This gets call when the web server is firs
 // function handler is called whenever a client makes an http request to the server
 // such as requesting a web page.
 function handler (req, res) { 
-    var q = url.parse(req.url, true);
+    var q = parse(req.url, true);
     var filename = "." + q.pathname;
-    var extname = path.extname(filename);
+    var extname = _extname(filename);
     if (filename==='./') {
       filename= './index.html';
     }
@@ -59,10 +59,10 @@ function handler (req, res) {
 	    break;
     }
     
-    fs.readFile(__dirname + '/public/' + filename, function(err, content) {
+    readFile(__dirname + '/public/' + filename, function(err, content) {
 	if(err) {
 	    console.log('File not found. Filename='+filename);
-	    fs.readFile(__dirname + '/public/404.html', function(err, content) {
+	    readFile(__dirname + '/public/404.html', function(err, content) {
 		res.writeHead(200, {'Content-Type': 'text/html'}); 
 		return res.end(content,'utf'); //display 404 on error
 	    });
@@ -79,7 +79,7 @@ function handler (req, res) {
 
 
 	/****** io.socket is the websocket connection to the client's browser********/
-var cor_actual
+var cor_actual = { check: false, rgbvalue:[255, 255, 255, 0.5], rgbavaluestr: "rgba(255, 255, 255, 0.5)", color_selector:null};
 var clients =[];
 
 io.sockets.on('connection', function (socket) {// WebSocket Connection
@@ -94,7 +94,9 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 	console.log(clients.length + ' clients are currently connected');
 	console.log('-----------------------------------------------------------------');
 	//envia a cor actual para a socket na conexão
-	socket.broadcast.to(socket.id).emit('rgbt', cor_actual);
+	console.log('##########################');
+	console.log(cor_actual);
+	io.to(clientInfo.clientId).emit('start', cor_actual);
 
 
 	//Whenever someone disconnects this piece of code executed
@@ -113,16 +115,14 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 		}
 	});
 	/**
-	* @todo mudar cor ao iniciar socket
-    * @todo definir o valor do alpha numa mudança de cor
     * @todo arcoiris rodar cores automaticamente
     */
 
 	socket.on('rgb', function(data) {
-		//socket.broadcast.emit('rgbt', data);
+		socket.broadcast.emit('rgbt', data);
 
 
-		if (data.type === "flow"){
+		/*if (data.type === "flow"){
 			if (data.check === true) {
 				var r = 255, g = 0, b = 0;
 				redLED.pwmWrite(255);
@@ -157,28 +157,29 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 				greenLED.pwmWrite(0);
 				blueLED.pwmWrite(0);
 			}
-		}/*else{
-			if (data.check === true) {
-				//Aplicar alpha
-				var red = Math.ceil(data.rgbvalue[0] * data.alpha).toString()
-				var green = Math.ceil(data.rgbvalue[1] * data.alpha).toString()
-				var blue = Math.ceil(data.rgbvalue[2] * data.alpha).toString()
+		}else{*/
 
-				//variavel guardada para definir o valor rgb na conexao à socket
-				cor_actual = data
-				console.log(cor_actual)
 
-				//Muda os valores dos GPIO
-				redLED.pwmWrite(red);
-				greenLED.pwmWrite(green);
-				blueLED.pwmWrite(blue);
-			}else{
-				redLED.pwmWrite(0);
-				greenLED.pwmWrite(0);
-				blueLED.pwmWrite(0);
-			}
-		}*/
+		if (data.check === true) {
+			//Aplicar alpha
+			var red = Math.ceil(data.rgbvalue[0] * data.rgbvalue[3]).toString();
+			var green = Math.ceil(data.rgbvalue[1] * data.rgbvalue[3]).toString();
+			var blue = Math.ceil(data.rgbvalue[2] * data.rgbvalue[3]).toString();
 
+
+			//variavel guardada para definir o valor rgb na conexao à socket
+			cor_actual = data;
+
+			//Muda os valores dos GPIO
+			redLED.pwmWrite(red);
+			greenLED.pwmWrite(green);
+			blueLED.pwmWrite(blue);
+		}else{
+			cor_actual = data;
+			redLED.pwmWrite(0);
+			greenLED.pwmWrite(0);
+			blueLED.pwmWrite(0);
+		}
 	});
 });
 
